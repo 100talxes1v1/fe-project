@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "declaration": false,
+  },
+  "include": [
+    "../types/**/*.d.ts",
+    "./unit/**/*.test.ts"
+  ]
+}
