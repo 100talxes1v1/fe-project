@@ -17,12 +17,16 @@ function __module_js_includes() {
 	if (process.env.NODE_ENV === 'production') {
     return [
       __path_src(),
-      __path_test()
+      __path_test(),
+      __path_modules('node_modules/vue-router'),
+      __path_modules('node_modules/vuex')
     ];
   } else {
     return [
       __path_src(),
-      __path_test()
+      __path_test(),
+      __path_modules('node_modules/vue-router'),
+      __path_modules('node_modules/vuex')
     ];
   }
 }

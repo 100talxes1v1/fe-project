@@ -2,7 +2,9 @@ var config = {
   presets: [
     [
       "@babel/env", {
-        "modules": false
+        "modules": false,
+        "useBuiltIns": "usage",
+        "corejs": 3
       }
     ]
   ],
@@ -10,7 +12,7 @@ var config = {
     [
       "@babel/plugin-transform-runtime",
       {
-        "corejs": 3
+        "regenerator": false
       }
     ]
   ]
