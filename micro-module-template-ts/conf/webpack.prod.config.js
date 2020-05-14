@@ -4,9 +4,14 @@ var merge = require('webpack-merge');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var DeclarationBundlerPlugin = require('declaration-bundler-webpack4-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 function __path_src() {
 	return path.resolve(__dirname, '../src');
+}
+
+function __path_modules(dir) {
+  return path.join(__dirname, '..', dir)
 }
 
 function __vueCssLoaders(preProcessorName) {
@@ -38,8 +43,8 @@ let config = {
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: '<%=libraryName%>.min.js',
-    publicPath: '<%=publicPath%>',
+    filename: 'index.js',
+    publicPath: '',
 		libraryTarget: 'system',
     jsonpFunction: 'webpackJsonp_<%=libraryName%>'
   },
@@ -87,7 +92,7 @@ let config = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '<%=libraryName%>.min.css'
+      filename: 'index.css'
     }),
     new OptimizeCSSAssetsPlugin({
       cssProcessorOptions: {
@@ -95,8 +100,13 @@ let config = {
       }
     }),
     new DeclarationBundlerPlugin({
-      out: '../dist/<%=libraryName%>.d.ts'
-    })
+      out: '../dist/index.d.ts'
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: 'static'
+      }
+    ])
   ]
 };
 

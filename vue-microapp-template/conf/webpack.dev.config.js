@@ -35,7 +35,7 @@ let config = {
   entry: {
     index: [
       'webpack-hot-middleware/client?reload=true',
-      path.resolve(__dirname, '../src/demo/index.ts')
+      path.resolve(__dirname, '../src/demo/index.js')
     ]
   },
   output: {

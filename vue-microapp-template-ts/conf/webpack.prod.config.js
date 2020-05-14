@@ -5,7 +5,7 @@ var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var DeclarationBundlerPlugin = require('declaration-bundler-webpack4-plugin');
 var BostonPlugin = require('@xes/dh-boston-webpack-plugin');
-var externalDependencies = require('../dependenciesManifest.json');
+var externalDependencies = require('../remoteDependencies.json');
 var manifest = {...externalDependencies};
 // delete manifest['@xes/dh-boston-launcher'];
 
@@ -44,14 +44,14 @@ function __externalConfig() {
 
 let config = {
   mode: 'production',
-	devtool: false,
+  devtool: 'source-map',
   entry: {
     index: path.resolve(__dirname, '../src/index.ts')
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: '<%=appName%>.min.js',
-    publicPath: '<%=publicPath%>',
+    filename: 'index.js',
+    publicPath: '',
 		libraryTarget: 'commonjs2',
     jsonpFunction: 'webpackJsonp_<%=appName%>'
   },
@@ -100,7 +100,7 @@ let config = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '<%=appName%>.min.css'
+      filename: 'index.css'
     }),
     new OptimizeCSSAssetsPlugin({
       cssProcessorOptions: {
@@ -108,7 +108,7 @@ let config = {
       }
     }),
     new DeclarationBundlerPlugin({
-      out: '../dist/<%=appName%>.d.ts'
+      out: '../dist/index.d.ts'
     }),
     new BostonPlugin({
       manifest: manifest
