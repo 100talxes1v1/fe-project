@@ -3,26 +3,26 @@
     "micro module template by ts": {
       "templateFolder": "micro-module-template-ts",
       "needInjectFiles": {
-        "package.json": [ "name", "description", "libraryName", "author" ],
+        "package.json": [ "name", "libraryName", "description", "author" ],
         "readme.md": [ "name", "description" ],
-        "./conf/webpack.prod.config.js": [ "libraryName", "publicPath" ]
+        "./conf/webpack.prod.config.js": [ "libraryName" ]
       }
     },
     "vue microapp template": {
       "templateFolder": "vue-microapp-template",
       "needInjectFiles": {
-        "package.json": [ "name", "description", "appName", "author" ],
+        "package.json": [ "name", "appName", "description", "author" ],
         "readme.md": [ "name", "description" ],
-        "./conf/webpack.prod.config.js": [ "appName", "publicPath" ],
+        "./conf/webpack.prod.config.js": [ "appName" ],
         "./src/index.js": [ "appName" ]
       }
     },
     "vue microapp template by ts": {
       "templateFolder": "vue-microapp-template-ts",
       "needInjectFiles": {
-        "package.json": [ "name", "description", "appName", "author" ],
+        "package.json": [ "name", "appName", "description", "author" ],
         "readme.md": [ "name", "description" ],
-        "./conf/webpack.prod.config.js": [ "appName", "publicPath" ],
+        "./conf/webpack.prod.config.js": [ "appName" ],
         "./src/index.ts": [ "appName" ]
       }
     }
