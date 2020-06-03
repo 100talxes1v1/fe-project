@@ -57,7 +57,6 @@ const router = new VueRouter({
 });
 
 export default {
-  microAppName: '<%=appName%>',
   async loaded() {
     new Vue({
       el: this.mountElement,

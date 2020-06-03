@@ -60,8 +60,6 @@ const router = new VueRouter({
 });
 
 export default class implements IBostonApp {
-  microAppName = '<%=appName%>';
-
   constructor() {
   }
   loaded(this: IBostonApp): Promise<void> {
