@@ -4,7 +4,8 @@ var merge = require('webpack-merge');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var DeclarationBundlerPlugin = require('declaration-bundler-webpack4-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+var bostonDependencies = require('../package.json').bostonDependencies;
+var BostonWebpackPlugin = require('@xes/dh-boston-webpack-plugin');
 
 function __path_src() {
 	return path.resolve(__dirname, '../src');
@@ -35,9 +36,21 @@ function __vueCssLoaders(preProcessorName) {
   return loaders;
 }
 
+function __externalConfig() {
+  const c = {};
+  if (bostonDependencies) {
+    Object.keys(bostonDependencies).forEach(libName => {
+      bostonDependencies[libName].forEach(name => {
+        c[name] = name;
+      });
+    });
+  }
+  return c;
+}
+
 let config = {
   mode: 'production',
-	devtool: false,
+  devtool: 'source-map',
   entry: {
     index: path.resolve(__dirname, '../src/index.ts')
   },
@@ -45,9 +58,10 @@ let config = {
     path: path.resolve(__dirname, '../dist'),
     filename: 'index.js',
     publicPath: '',
-		libraryTarget: 'system',
+		libraryTarget: 'umd',
     jsonpFunction: 'webpackJsonp_<%=libraryName%>'
   },
+	externals: [__externalConfig()],
   module: {
     rules: [
 			{
@@ -102,11 +116,9 @@ let config = {
     new DeclarationBundlerPlugin({
       out: '../dist/index.d.ts'
     }),
-    new CopyWebpackPlugin([
-      {
-        from: 'static'
-      }
-    ])
+    new BostonWebpackPlugin({
+      library: true
+    })
   ]
 };
 

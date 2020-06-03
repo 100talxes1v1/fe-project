@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import app from './app.vue';
-import { IMicroApp } from '@xes/dh-boston-type';
+import { IBostonApp } from '@xes/dh-boston-type';
 import home from './pages/home/index.vue';
 import list from './pages/list/index.vue';
 import detail from './pages/detail/index.vue';
@@ -59,12 +59,12 @@ const router = new VueRouter({
   }
 });
 
-export default class implements IMicroApp {
+export default class implements IBostonApp {
   microAppName = '<%=appName%>';
 
   constructor() {
   }
-  loaded(this: IMicroApp): Promise<void> {
+  loaded(this: IBostonApp): Promise<void> {
     new Vue({
       el: this.mountElement as Element,
       router,

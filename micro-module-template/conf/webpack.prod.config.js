@@ -1,16 +1,23 @@
 var path = require('path');
-var webpack = require('webpack');
 var baseConfig = require('./webpack.base.config');
 var merge = require('webpack-merge');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
+var OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+var DeclarationBundlerPlugin = require('declaration-bundler-webpack4-plugin');
+var bostonDependencies = require('../package.json').bostonDependencies;
+var BostonWebpackPlugin = require('@xes/dh-boston-webpack-plugin');
 
 function __path_src() {
 	return path.resolve(__dirname, '../src');
 }
 
+function __path_modules(dir) {
+  return path.join(__dirname, '..', dir)
+}
+
 function __vueCssLoaders(preProcessorName) {
   let loaders = [
-    'vue-style-loader',
+    MiniCssExtractPlugin.loader,
     'css-loader',
     'postcss-loader'
   ];
@@ -29,26 +36,32 @@ function __vueCssLoaders(preProcessorName) {
   return loaders;
 }
 
+function __externalConfig() {
+  const c = {};
+  if (bostonDependencies) {
+    Object.keys(bostonDependencies).forEach(libName => {
+      bostonDependencies[libName].forEach(name => {
+        c[name] = name;
+      });
+    });
+  }
+  return c;
+}
+
 let config = {
-  mode: 'development',
+  mode: 'production',
   devtool: 'source-map',
   entry: {
-    index: [
-      'webpack-hot-middleware/client?reload=true',
-      path.resolve(__dirname, '../src/demo/index.ts')
-    ]
+    index: path.resolve(__dirname, '../src/index.js')
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: 'static/js/[name].[hash:7].js',
-    chunkFilename: 'static/js/[id].[chunkhash:7].js',
-    publicPath: '/'
+    filename: 'index.js',
+    publicPath: '',
+		libraryTarget: 'umd',
+    jsonpFunction: 'webpackJsonp_<%=libraryName%>'
   },
-	resolve: {
-		alias: {
-			'@': __path_src()
-		}
-	},
+	externals: [__externalConfig()],
   module: {
     rules: [
 			{
@@ -89,12 +102,22 @@ let config = {
 			}
     ]
   },
+  optimization: {
+  },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin({
-      title: 'development',
-      template: 'conf/index.html',
-      inject: true
+    new MiniCssExtractPlugin({
+      filename: 'index.css'
+    }),
+    new OptimizeCSSAssetsPlugin({
+      cssProcessorOptions: {
+        safe: true
+      }
+    }),
+    new DeclarationBundlerPlugin({
+      out: '../dist/index.d.ts'
+    }),
+    new BostonWebpackPlugin({
+      library: true
     })
   ]
 };

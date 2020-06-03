@@ -1,6 +1,14 @@
 {
-  "----创建微模块项目----": {
-    "micro module template by ts": {
+  "----创建微前端项目----": {
+    "boston library template": {
+      "templateFolder": "micro-module-template",
+      "needInjectFiles": {
+        "package.json": [ "name", "libraryName", "description", "author" ],
+        "readme.md": [ "name", "description" ],
+        "./conf/webpack.prod.config.js": [ "libraryName" ]
+      }
+    },
+    "boston library template by ts": {
       "templateFolder": "micro-module-template-ts",
       "needInjectFiles": {
         "package.json": [ "name", "libraryName", "description", "author" ],
@@ -8,7 +16,7 @@
         "./conf/webpack.prod.config.js": [ "libraryName" ]
       }
     },
-    "vue microapp template": {
+    "boston app vue template": {
       "templateFolder": "vue-microapp-template",
       "needInjectFiles": {
         "package.json": [ "name", "appName", "description", "author" ],
@@ -17,7 +25,7 @@
         "./src/index.js": [ "appName" ]
       }
     },
-    "vue microapp template by ts": {
+    "boston app vue template by ts": {
       "templateFolder": "vue-microapp-template-ts",
       "needInjectFiles": {
         "package.json": [ "name", "appName", "description", "author" ],

@@ -1,9 +1,0 @@
-{
-  "vue": "http://localhost:8090/module/vue_runtime.min.js!vueExports",
-  "vuex": "http://localhost:8090/module/vue_runtime.min.js!vuexExports",
-  "vue-router": "http://localhost:8090/module/vue_runtime.min.js!vueRouterExports",
-  "vue-class-component": "http://localhost:8090/module/vue_runtime.min.js!vueClassComponentExports",
-  "element-ui": "http://localhost:8090/module/vue_runtime.min.js!elementUIExports",
-  "@xes/dh-boston-type": "http://localhost:8090/module/vue_runtime.min.js!bostonExports",
-  "runtimeCss": "http://localhost:8090/module/vue_runtime.min.css"
-}
