@@ -44,11 +44,6 @@ let config = {
     chunkFilename: 'static/js/[id].[chunkhash:7].js',
     publicPath: '/'
   },
-	resolve: {
-		alias: {
-			'@': __path_src()
-		}
-	},
   module: {
     rules: [
 			{

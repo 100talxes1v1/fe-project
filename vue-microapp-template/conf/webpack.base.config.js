@@ -29,7 +29,10 @@ function __module_js_includes() {
 
 module.exports = {
 	resolve: {
-		extensions: ['.ts', '.js', '.vue', '.json']
+		extensions: ['.ts', '.js', '.vue', '.json'],
+		alias: {
+			'@': __path_src()
+		}
 	},
 	module: {
 		rules: [
