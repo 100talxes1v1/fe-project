@@ -1,36 +1,13 @@
 var path = require('path');
-var baseConfig = require('./webpack.base.config');
+var createBaseConfig = require('./webpack.base.config');
 var merge = require('webpack-merge');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var DeclarationBundlerPlugin = require('declaration-bundler-webpack4-plugin');
 var bostonDependencies = require('../package.json').bostonDependencies;
 var BostonWebpackPlugin = require('@xes/dh-boston-webpack-plugin');
-
-function __path_src() {
-	return path.resolve(__dirname, '../src');
-}
-
-function __vueCssLoaders(preProcessorName) {
-  let loaders = [
-    MiniCssExtractPlugin.loader,
-    'css-loader',
-    'postcss-loader'
-  ];
-  if (preProcessorName === 'scss') {
-    loaders.push('sass-loader');
-  } else if (preProcessorName === 'sass') {
-    loaders.push({
-      loader: 'sass-loader',
-      options: {
-        indentedSyntax: true
-      }
-    });
-  } else if (preProcessorName === 'less') {
-    loaders.push('less-loader');
-  }
-  return loaders;
-}
+var { getStyleRules } = require('./styleRule');
+var packageInfo = require('../package.json');
 
 function __externalConfig() {
   const c = {};
@@ -55,48 +32,11 @@ let config = {
     filename: 'index.js',
     publicPath: '',
 		libraryTarget: 'umd',
-    jsonpFunction: 'webpackJsonp_<%=appName%>'
+    jsonpFunction: `webpackJsonp_${packageInfo.microAppName}`
   },
 	externals: [__externalConfig()],
   module: {
-    rules: [
-			{
-				resource: {
-					test: /\.css$/,
-					include: [
-						__path_src()
-					]
-				},
-				use: __vueCssLoaders()
-			},
-			{
-				resource: {
-					test: /\.scss$/,
-					include: [
-						__path_src()
-					]
-				},
-				use: __vueCssLoaders('scss')
-			},
-			{
-				resource: {
-					test: /\.sass$/,
-					include: [
-						__path_src()
-					]
-				},
-				use: __vueCssLoaders('sass')
-			},
-			{
-				resource: {
-					test: /\.less$/,
-					include: [
-						__path_src()
-					]
-				},
-				use: __vueCssLoaders('less')
-			}
-    ]
+    rules: getStyleRules('prod')
   },
   optimization: {
   },
@@ -110,10 +50,10 @@ let config = {
       }
     }),
     new DeclarationBundlerPlugin({
-      out: '../dist/index.d.ts'
+      out: 'index.d.ts'
     }),
     new BostonWebpackPlugin()
   ]
 };
 
-module.exports = merge(baseConfig, config);
+module.exports = merge(createBaseConfig('prod'), config);

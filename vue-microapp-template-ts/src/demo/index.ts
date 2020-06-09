@@ -1,8 +1,26 @@
-import { IBostonApp } from '@xes/dh-boston-type';
-import { applicationContext } from '@xes/dh-boston-launcher';
-import CustomMicroApp from '../index';
+import { EnumAppType } from '@xes/dh-boston-type';
+import { applicationContext, EnumEnv } from '@xes/dh-boston-launcher';
+import packageInfo from '../../package.json';
 
-const app = (new CustomMicroApp() as IBostonApp);
-app.applicationContext = applicationContext;
-app.mountElement = (document.getElementById('boston-main') as Element);
-app.loaded();
+applicationContext.init({
+  debug: true,
+  baseUrl: '/microapp/',
+  registry: {
+    host: 'http://localhost:8080/',
+    env: EnumEnv.dev
+  }
+}, async () => {
+  return [
+    {
+      name: packageInfo.microAppName,
+      type: EnumAppType.main,
+      entry: packageInfo.microAppName,
+      'entry_css': 'index.css',
+      mount: 'boston-main'
+    }
+  ];
+}).then(() => {
+  console.log('boston inited');
+}).catch(err => {
+  console.error(err);
+});
