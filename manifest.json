@@ -21,7 +21,6 @@
       "needInjectFiles": {
         "package.json": [ "name", "appName", "description", "author" ],
         "readme.md": [ "name", "description" ],
-        "./conf/webpack.prod.config.js": [ "appName" ],
         "./src/index.js": [ "appName" ]
       }
     },
