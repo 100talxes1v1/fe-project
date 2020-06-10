@@ -1,3 +1,4 @@
+import { EnumAppType } from '@xes/dh-boston-type';
 import { applicationContext, EnumEnv } from '@xes/dh-boston-launcher';
 import packageInfo from '../../package.json';
 
