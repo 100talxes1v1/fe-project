@@ -31,6 +31,7 @@ let config = {
     path: path.resolve(__dirname, '../dist'),
     filename: 'index.js',
     publicPath: '',
+    library: `${packageInfo.microAppName}`,
 		libraryTarget: 'umd',
     jsonpFunction: `webpackJsonp_${packageInfo.microAppName}`
   },
