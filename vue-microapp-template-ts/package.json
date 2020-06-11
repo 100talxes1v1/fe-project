@@ -33,7 +33,7 @@
     "@typescript-eslint/parser": "^2.5.0",
     "@vue/eslint-config-typescript": "^5.0.1",
     "@vue/test-utils": "^1.0.0-beta.29",
-    "@xes/dh-boston-launcher": "^0.2.14",
+    "@xes/dh-boston-launcher": "^0.2.15",
     "@xes/dh-boston-webpack-plugin": "^0.2.7",
     "@xes/eslint-config-dahai": "^0.1.3",
     "autoprefixer": "^9.6.1",
