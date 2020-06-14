@@ -1,5 +1,4 @@
 var path = require('path');
-var webpack = require('webpack');
 var createBaseConfig = require('./webpack.base.config');
 var merge = require('webpack-merge');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -9,10 +8,7 @@ let config = {
   mode: 'development',
   devtool: 'source-map',
   entry: {
-    index: [
-      'webpack-hot-middleware/client?reload=true',
-      path.resolve(__dirname, '../src/demo/index.js')
-    ]
+    index: path.resolve(__dirname, '../src/demo/index.js')
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -24,7 +20,6 @@ let config = {
     rules: getStyleRules('dev')
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       title: 'development',
       template: 'conf/index.html',

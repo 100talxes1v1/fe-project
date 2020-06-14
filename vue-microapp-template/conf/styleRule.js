@@ -42,8 +42,7 @@ exports.getStyleRules = function (nodeEnv) {
       ];
     } else {
       return  [
-        __path_src(),
-        __path_modules('node_modules/element-ui')
+        __path_src()
       ];
     }
   }

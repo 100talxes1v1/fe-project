@@ -10,7 +10,7 @@ import notFound from './pages/not_found/index.vue';
 Vue.use(VueRouter);
 const router = new VueRouter({
   mode: 'history',
-  base: '/microapp/<%=appName%>/',
+  base: '<%=baseUrl%>/<%=appName%>/',
   routes: [
     {
       name: 'home',
