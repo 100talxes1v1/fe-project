@@ -11,50 +11,18 @@ var webpackMiddleware = require("webpack-dev-middleware");
 var webpackHotMiddleware = require('webpack-hot-middleware');
 var proxyMiddleware = require('http-proxy-middleware');
 var serveStatic = require('serve-static');
+var packageInfo = require('../package.json');
+
+var port = 8080;
+var ip = '0.0.0.0';
+var url = `http://${ip}:${port}`;
+var app = express();
 
 const rmPromise = promiseify(rm);
-const webpackCompilePromise = function (webpackConfig) {
-  return new Promise((resolve, reject) => {
-    var compiler = webpack(webpackConfig);
-    compiler.run(function (err, stats) {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(stats);
-      }
-    });
-  });
-};
 var spinner = null;
 rmPromise(path.resolve(__dirname, '../dist')).then(() => {
-  spinner= ora('Building boston app...\n');
+  spinner= ora('Starting development server...\n');
   spinner.start();
-  return webpackCompilePromise(webpackAppConfig);
-}).then(stats => {
-  spinner.stop();
-  if (stats) {
-    console.log(stats.toString({
-      colors: true,
-      modules: false,
-      children: false,
-      chunks: false,
-      chunkModules: false
-    }) + '\n\n');
-    if (stats.hasErrors()) {
-      throw new Error('  Build fail.\n');
-    }
-  }
-  console.log(chalk.cyan('  Build complete.\n'));
-}).then(() => {
-
-  var port = 8080;
-  var ip = '0.0.0.0';
-  var url = `http://${ip}:${port}`;
-
-  spinner= ora('Starting dev server...\n');
-  spinner.start();
-
-  var app = express();
 
   app.use('/app', serveStatic(path.resolve(__dirname, '../dist/app/')));
 
@@ -69,32 +37,65 @@ rmPromise(path.resolve(__dirname, '../dist')).then(() => {
     app.use(proxyMiddleware(options.filter || context, options))
   });
 
-	var compiler = webpack(webpackDevConfig);
-
-	var middleware = webpackMiddleware(compiler, {
-    publicPath: webpackDevConfig.output.publicPath,
-    writeToDisk: true
-	});
-	middleware.waitUntilValid(function (stats) {
-    spinner.stop();
-    if (stats) {
-      if (stats.hasErrors()) {
-        console.error(chalk.red('  Start dev server fail.\n'));
-        server.close(function () {
-          process.exit(0);
-        });
-        return;
+  // compile dev.app.config
+  var appCompilePromise = new Promise((resolve, reject) => {
+    var appCompiler = webpack(webpackAppConfig);
+    var appMiddleware = webpackMiddleware(appCompiler, {
+      publicPath: webpackAppConfig.output.publicPath,
+      logLevel: 'error',
+      writeToDisk: true
+    });
+    appMiddleware.waitUntilValid(function (stats) {
+      spinner.stop();
+      if (stats) {
+        if (stats.hasErrors()) {
+          reject(stats);
+          return;
+        }
       }
-    }
-    console.log(chalk.cyan('  Dev server Listenning at ' + url + '\n'));
-	});
-	app.use(middleware);
-	var hotMiddleware = webpackHotMiddleware(compiler);
-	app.use(hotMiddleware);
+      resolve();
+    });
+    app.use(appMiddleware);
+
+    var appHotMiddleware = webpackHotMiddleware(appCompiler);
+    app.use(appHotMiddleware);
+  });
+
+  // compile dev.config
+  var demoCompilePromise = new Promise((resolve, reject) => {
+    var compiler = webpack(webpackDevConfig);
+    var middleware = webpackMiddleware(compiler, {
+      publicPath: webpackDevConfig.output.publicPath,
+      logLevel: 'error'
+    });
+    middleware.waitUntilValid(function (stats) {
+      spinner.stop();
+      if (stats) {
+        if (stats.hasErrors()) {
+          reject(stats);
+          return;
+        }
+      }
+      resolve();
+    });
+    app.use(middleware);
+  });
+
+  Promise.all([
+    appCompilePromise,
+    demoCompilePromise
+  ]).then(() => {
+    var appPath = path.resolve('/', packageInfo.bostonBaseUrl, packageInfo.bostonAppName);
+    console.log(chalk.cyan('  Development server Listenning at ' + url + '\n  You can visit boston app at ' + url + appPath + '\n'));
+  }).catch(err => {
+    console.error(err);
+    server.close(function () {
+      process.exit(0);
+    });
+  });
 
   spinner.stop();
-  console.log(chalk.cyan('  Dev server Listenning at ' + url + '\n'));
-  app.listen(port, ip);
+  var server = app.listen(port, ip);
 }).catch(err => {
   let message = err.message ? err.message : err;
   console.error(message);

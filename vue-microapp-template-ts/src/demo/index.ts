@@ -4,17 +4,17 @@ import packageInfo from '../../package.json';
 
 applicationContext.init({
   debug: true,
-  baseUrl: '/microapp/',
+  baseUrl: packageInfo.bostonBaseUrl,
   registry: {
-    host: 'http://localhost:8080/',
+    host: 'https://b.xes1v1.com/',
     env: EnumEnv.dev
   }
 }, async () => {
   return [
     {
-      name: packageInfo.microAppName,
+      name: packageInfo.bostonAppName,
       type: EnumAppType.main,
-      entry: packageInfo.microAppName,
+      entry: packageInfo.bostonAppName,
       'entry_css': 'index.css',
       mount: 'boston-main'
     }

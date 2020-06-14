@@ -31,9 +31,9 @@ let config = {
     path: path.resolve(__dirname, '../dist'),
     filename: 'index.js',
     publicPath: '',
-    library: `${packageInfo.microAppName}`,
+    library: `${packageInfo.bostonAppName}`,
 		libraryTarget: 'umd',
-    jsonpFunction: `webpackJsonp_${packageInfo.microAppName}`
+    jsonpFunction: `webpackJsonp_${packageInfo.bostonAppName}`
   },
 	externals: [__externalConfig()],
   module: {

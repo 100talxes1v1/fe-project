@@ -19,17 +19,17 @@
     "boston app vue template": {
       "templateFolder": "vue-microapp-template",
       "needInjectFiles": {
-        "package.json": [ "name", "appName", "description", "author" ],
+        "package.json": [ "name", "baseUrl", "appName", "description", "author" ],
         "readme.md": [ "name", "description" ],
-        "./src/index.js": [ "appName" ]
+        "./src/index.js": [ "baseUrl", "appName" ]
       }
     },
     "boston app vue template by ts": {
       "templateFolder": "vue-microapp-template-ts",
       "needInjectFiles": {
-        "package.json": [ "name", "appName", "description", "author" ],
+        "package.json": [ "name", "baseUrl", "appName", "description", "author" ],
         "readme.md": [ "name", "description" ],
-        "./src/index.ts": [ "appName" ]
+        "./src/index.ts": [ "baseUrl", "appName" ]
       }
     }
   },

@@ -4,7 +4,7 @@
   "description": "<%=description%>",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "microLibraryName": "<%=libraryName%>",
+  "bostonLibraryName": "<%=libraryName%>",
   "scripts": {
     "build": "cross-env NODE_ENV=production node build/prod.js"
   },

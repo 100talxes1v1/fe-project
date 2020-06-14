@@ -39,7 +39,7 @@ const routes = [
 Vue.use(VueRouter);
 const router = new VueRouter({
   mode: 'history',
-  base: '/microapp/<%=appName%>/',
+  base: '<%=baseUrl%>/<%=appName%>/',
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
