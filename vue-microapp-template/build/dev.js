@@ -94,7 +94,6 @@ rmPromise(path.resolve(__dirname, '../dist')).then(() => {
     });
   });
 
-  spinner.stop();
   var server = app.listen(port, ip);
 }).catch(err => {
   let message = err.message ? err.message : err;
