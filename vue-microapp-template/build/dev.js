@@ -88,7 +88,7 @@ rmPromise(path.resolve(__dirname, '../dist')).then(() => {
     var appPath = path.resolve('/', packageInfo.bostonBaseUrl, packageInfo.bostonAppName);
     console.log(chalk.cyan('  Development server Listenning at ' + url + '\n  You can visit boston app at ' + url + appPath + '\n'));
   }).catch(err => {
-    console.error(err);
+    // console.error(err);
     server.close(function () {
       process.exit(0);
     });
