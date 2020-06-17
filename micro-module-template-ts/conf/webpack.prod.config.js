@@ -4,7 +4,9 @@ var merge = require('webpack-merge');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var DeclarationBundlerPlugin = require('declaration-bundler-webpack4-plugin');
-var bostonDependencies = require('../package.json').bostonDependencies;
+var packageInfo = require('../package.json');
+var version = packageInfo.version.replace(/\./g, '_');
+var bostonDependencies = packageInfo.bostonDependencies;
 var BostonWebpackPlugin = require('@xes/dh-boston-webpack-plugin');
 
 function __path_src() {
@@ -58,9 +60,9 @@ let config = {
     path: path.resolve(__dirname, '../dist'),
     filename: 'index.js',
     publicPath: '',
-    library: '<%=libraryName%>',
+    library: '<%=libraryName%>_' + version,
 		libraryTarget: 'umd',
-    jsonpFunction: 'webpackJsonp_<%=libraryName%>'
+    jsonpFunction: 'webpackJsonp_<%=libraryName%>_' + version
   },
 	externals: [__externalConfig()],
   module: {
@@ -115,7 +117,7 @@ let config = {
       }
     }),
     new DeclarationBundlerPlugin({
-      out: '../dist/index.d.ts'
+      out: 'index.d.ts'
     }),
     new BostonWebpackPlugin({
       library: true
