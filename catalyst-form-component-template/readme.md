@@ -2,21 +2,24 @@
 
 > <%=description%>
 
-## Build Setup
+## API Reference
 
-``` bash
-# install dependencies
-npm install
+### <%=name%> API signature
 
-# build for development
-npm run dev
+* parameter
 
-# build for production
-npm run build
+  name|type|required|default|description
+  -|-|-|-|-
 
-# run lint check
-npm run lint
+* return
 
-# run unit test
-npm run karma
+  type|description
+  -|-
+
+## Options
+
+## Examples
+
+```javascript
+// Example
 ```
