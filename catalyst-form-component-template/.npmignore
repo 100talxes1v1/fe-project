@@ -1,0 +1,13 @@
+build/
+conf/
+src/demo/
+test/
+.vscode/
+npm-shrinkwrap.json
+.editorconfig
+.eslintrc.js
+babel.config.js
+postcss.config.js
+tsconfig.json
+gulpfile.js
+rollup.config.js
