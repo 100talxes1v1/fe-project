@@ -98,7 +98,7 @@
   },
   "----创建catalyst自定义组件----": {
     "catalyst form component template": {
-      "templateFolder": "catalyst-from-component-template",
+      "templateFolder": "catalyst-form-component-template",
       "needInjectFiles": {
         "package.json": [ "name", "libraryName", "description", "author" ],
         "readme.md": [ "name", "description" ],
