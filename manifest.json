@@ -95,5 +95,17 @@
         "readme.md": [ "name", "description" ]
       }
     }
+  },
+  "----创建catalyst自定义组件----": {
+    "catalyst form component template": {
+      "templateFolder": "catalyst-form-component-template",
+      "needInjectFiles": {
+        "package.json": [ "name", "libraryName", "description", "author" ],
+        "readme.md": [ "name", "description" ],
+        "./conf/webpack.prod.config.js": [ "libraryName" ],
+        "./src/index.js": [ "libraryName" ],
+        "./src/index.vue": [ "libraryName" ]
+      }
+    }
   }
 }
