@@ -38,7 +38,7 @@ export default {
     // options机制(可选) 有的组件(下拉框、复选框)需要展示一些备选项，往往这些备选项是通用的数据。因此，如果组件通过optionsId属性来获取备选项组的数据，需要调用注入的方法$mpGetOptions来获取。当然，自定义组件也可以不采用这个机制，而是内部通过自己的逻辑来获取备选项列表
     async init() {
       if (this.$mpGetOptions) {
-        let options = await this.$mpGetOptions(this.optionsId);
+        let options = await this.$mpGetOptions(this.optionsId); // eslint-disable-line
       }
     },
     handleInput(e) {
