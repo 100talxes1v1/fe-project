@@ -1,3 +1,3 @@
 export default {
-    ["<%=libraryName%>"]: () => import('./index.vue')
+    "<%=libraryName%>": () => import('./index.vue')
 }

@@ -55,7 +55,7 @@ let config = {
   mode: 'production',
   devtool: 'source-map',
   entry: {
-    index: path.resolve(__dirname, '../src/index.vue')
+    index: path.resolve(__dirname, '../src/index.js')
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
