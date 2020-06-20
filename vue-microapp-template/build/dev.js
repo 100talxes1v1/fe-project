@@ -14,9 +14,14 @@ var serveStatic = require('serve-static');
 var packageInfo = require('../package.json');
 
 var port = 8080;
-var ip = '0.0.0.0';
+var ip = 'localhost';
 var url = `http://${ip}:${port}`;
 var app = express();
+
+function normalizeBaseUrl(baseUrl) {
+  const s = baseUrl.replace(/^\/+/, '').replace(/\/+$/, '');
+  return `/${s}/`;
+}
 
 const rmPromise = promiseify(rm);
 var spinner = null;
@@ -85,7 +90,7 @@ rmPromise(path.resolve(__dirname, '../dist')).then(() => {
     appCompilePromise,
     demoCompilePromise
   ]).then(() => {
-    var appPath = path.resolve('/', packageInfo.bostonBaseUrl, packageInfo.bostonAppName);
+    var appPath = `${normalizeBaseUrl(packageInfo.bostonBaseUrl)}${packageInfo.bostonAppName}`;
     console.log(chalk.cyan('  Development server Listenning at ' + url + '\n  You can visit boston app at ' + url + appPath + '\n'));
   }).catch(err => {
     // console.error(err);
