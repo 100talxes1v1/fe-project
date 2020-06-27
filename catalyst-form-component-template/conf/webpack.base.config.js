@@ -22,7 +22,9 @@ function __module_js_includes() {
   } else {
     return [
       __path_src(),
-      __path_test()
+			__path_test(),
+			__path_modules('node_modules/@xes/dh-catalyst'),
+      __path_modules('node_modules/@xes/dh-component-vue-mp-ui')
     ];
   }
 }
@@ -60,7 +62,9 @@ module.exports = {
 				test: /\.vue$/,
 				include: [
 					__path_src(),
-          __path_test()
+					__path_test(),
+					__path_modules('node_modules/@xes/dh-catalyst'),
+          __path_modules('node_modules/@xes/dh-component-vue-mp-ui')
 				],
 				use: [
 					{
@@ -111,7 +115,10 @@ module.exports = {
 					test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
 					include: [
 						__path_src(),
-            __path_test()
+						__path_test(),
+						__path_modules('node_modules/element-ui'),
+            __path_modules('node_modules/@xes/dh-catalyst'),
+            __path_modules('node_modules/@xes/dh-component-vue-mp-ui')
 					]
 				},
 				use: [
@@ -129,7 +136,10 @@ module.exports = {
           test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
 					include: [
 						__path_src(),
-            __path_test()
+						__path_test(),
+						__path_modules('node_modules/element-ui'),
+            __path_modules('node_modules/@xes/dh-catalyst'),
+            __path_modules('node_modules/@xes/dh-component-vue-mp-ui')
 					]
 				},
 				use: [

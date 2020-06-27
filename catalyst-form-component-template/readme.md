@@ -2,24 +2,25 @@
 
 > <%=description%>
 
-## API Reference
 
-### <%=name%> API signature
+## <%=name%> 组件功能简介
 
-* parameter
+此处请简单介绍此组件基本共功能!
 
-  name|type|required|default|description
-  -|-|-|-|-
+## <%=name%> 组件配置项说明
 
-* return
+此处请以表格形式展示组件的配置项
 
-  type|description
-  -|-
+参数名称|类型|必填|默认值|说明(备注)
+-|-|-|-|-
 
-## Options
 
-## Examples
+## 使用示例
+
+此处请务必填写一个使用示例
 
 ```javascript
-// Example
+// 使用示例
 ```
+
+## 其他

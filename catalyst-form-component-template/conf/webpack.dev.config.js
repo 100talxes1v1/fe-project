@@ -37,6 +37,7 @@ function __vueCssLoaders(preProcessorName) {
 }
 
 let config = {
+  mode: 'development',
   entry: {
     index: path.resolve(__dirname, '../src/demo/index.js')
   },
@@ -46,6 +47,13 @@ let config = {
     chunkFilename: 'static/js/[id].[chunkhash:7].js',
     publicPath: '/'
   },
+  resolve: {
+    symlinks: false,
+		alias: {
+			'@xes/dh-catalyst$': '@xes/dh-catalyst/src/index.js',
+			'@xes/dh-component-vue-mp-ui$': '@xes/dh-component-vue-mp-ui/src/index.js'
+		}
+	},
   module: {
     rules: [
 			{
