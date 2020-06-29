@@ -1,13 +1,13 @@
-# <%=name%>
+# catalyst_form_<%=name%>
 
 > <%=description%>
 
 
-## <%=name%> 组件功能简介
+## catalyst_form_<%=name%> 组件功能简介
 
 此处请简单介绍此组件基本共功能!
 
-## <%=name%> 组件配置项说明
+## catalyst_form_<%=name%> 组件配置项说明
 
 此处请以表格形式展示组件的配置项
 

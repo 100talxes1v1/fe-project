@@ -1,3 +1,4 @@
+import customComponent from './index.vue';
 export default {
-    "<%=libraryName%>": () => import('./index.vue')
+    "catalyst_form_<%=libraryName%>": customComponent
 }

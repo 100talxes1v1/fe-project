@@ -1,9 +1,9 @@
 {
-  "name": "<%=name%>",
+  "name": "catalyst_form_<%=name%>",
   "version": "0.1.1",
   "description": "<%=description%>",
   "main": "dist/index.js",
-  "bostonLibraryName": "<%=libraryName%>",
+  "bostonLibraryName": "catalyst_form_<%=libraryName%>",
   "scripts": {
     "dev": "node build/dev.js",
     "build": "cross-env NODE_ENV=production node build/prod.js"

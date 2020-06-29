@@ -61,9 +61,9 @@ let config = {
     path: path.resolve(__dirname, '../dist'),
     filename: 'index.js',
     publicPath: '',
-    library: '<%=libraryName%>_' + version,
+    library: 'catalyst_form_<%=libraryName%>_' + version,
 		libraryTarget: 'umd',
-    jsonpFunction: 'webpackJsonp_<%=libraryName%>_' + version
+    jsonpFunction: 'webpackJsonp_catalyst_form_<%=libraryName%>_' + version
   },
 	externals: [__externalConfig()],
   module: {

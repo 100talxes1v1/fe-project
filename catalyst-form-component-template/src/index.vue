@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "<%=libraryName%>",
+  name: "catalyst_form_<%=libraryName%>",
   props: {
     // 自定义表单组件必须定义value属性，需要实现双向绑定。value属性用来传递页面配置数据中的key_name绑定字段的值。value类型可以任意定义，如果key_name字段配置了多个绑定字段，则value定义成数组，一一对应返回数据
     value: {
