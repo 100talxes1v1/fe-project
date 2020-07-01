@@ -6,11 +6,11 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "bpm build",
-    "deploy": "bpm build && bpm publish"
+    "deploy": "bpm publish"
   },
   "author": "<%=author%>",
   "devDependencies": {
-    "@xes/dh-boston-package-manager": "^0.3.1"
+    "@xes/dh-boston-package-manager": "^0.3.3"
   },
   "browserslist": [
     "> 1%",
