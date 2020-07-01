@@ -11,9 +11,9 @@
     "boston library template by ts": {
       "templateFolder": "micro-module-template-ts",
       "needInjectFiles": {
-        "package.json": [ "name", "libraryName", "description", "author" ],
+        "package.json": [ "name", "description", "author" ],
         "readme.md": [ "name", "description" ],
-        "./conf/webpack.prod.config.js": [ "libraryName" ]
+        "bpm.config.js": [ "libraryName" ]
       }
     },
     "boston app vue template": {
