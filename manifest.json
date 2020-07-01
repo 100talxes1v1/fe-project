@@ -3,9 +3,9 @@
     "boston library template": {
       "templateFolder": "micro-module-template",
       "needInjectFiles": {
-        "package.json": [ "name", "libraryName", "description", "author" ],
+        "package.json": [ "name", "description", "author" ],
         "readme.md": [ "name", "description" ],
-        "./conf/webpack.prod.config.js": [ "libraryName" ]
+        "bpm.config.js": [ "libraryName" ]
       }
     },
     "boston library template by ts": {
