@@ -11,3 +11,4 @@ postcss.config.js
 tsconfig.json
 gulpfile.js
 rollup.config.js
+bpm.config.js
