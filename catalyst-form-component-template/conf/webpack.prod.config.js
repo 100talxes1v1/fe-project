@@ -126,7 +126,8 @@ let config = {
     new CopyPlugin([
       { from: 'meta.json', to: '../dist' },
       { from: 'readme.md', to: '../dist' },
-      { from: 'thumbnail.png', to: '../dist' }
+      { from: 'thumbnail.png', to: '../dist' },
+      { from: 'custom_logo.jpg', to: '../dist' }
     ])
   ]
 };
