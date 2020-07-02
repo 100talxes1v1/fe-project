@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "<%=description%>",
   "main": "dist/index.js",
-  "bostonLibraryName": "catalyst_form_<%=libraryName%>",
+  "bostonLibraryName": "catalyst_form_<%=name%>",
   "scripts": {
     "dev": "node build/dev.js",
     "build": "cross-env NODE_ENV=production node build/prod.js"

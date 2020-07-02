@@ -100,11 +100,11 @@
     "catalyst form component template": {
       "templateFolder": "catalyst-form-component-template",
       "needInjectFiles": {
-        "package.json": [ "name", "libraryName", "description", "author" ],
+        "package.json": [ "name", "description", "author" ],
         "readme.md": [ "name", "description" ],
-        "./conf/webpack.prod.config.js": [ "libraryName" ],
-        "./src/index.js": [ "libraryName" ],
-        "./src/index.vue": [ "libraryName" ]
+        "./conf/webpack.prod.config.js": [ "name" ],
+        "./src/index.js": [ "name" ],
+        "./src/index.vue": [ "name" ]
       }
     }
   }
