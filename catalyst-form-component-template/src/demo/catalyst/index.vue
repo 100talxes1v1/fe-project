@@ -50,7 +50,7 @@ export default {
       dockerArg: null
     };
   },
-  // TODO: renderTab
+
   inject: {
     renderTab: {
       default: () => null

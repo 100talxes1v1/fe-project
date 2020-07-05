@@ -23,7 +23,6 @@ export default {
       let { route } = router.resolve(uri);
       let title = document.title;
 
-      // TODO: 暂时屏蔽权限校验
       let comp = components[components.length - 1];
       return {
         component: comp,
@@ -49,7 +48,6 @@ export default {
   },
   watch: {
     uri() {
-      // TODO: 虽然这么修改router-content内部组件的$mpRoute能够获取正确的路由了，但是router-content本身上的$mpRoute获取得还是不对，需要后续修复。出现此问题的场景是在一个页面上连续弹出两个及以上数量的dialog时会出现(每个dialog内部是用router-content加载的页面)
       this.destroyContentRoute();
       this.defineContentRoute();
       this.track();

@@ -5,8 +5,13 @@ import Catalyst from '@xes/dh-catalyst';
 import '@xes/dh-catalyst/dist/catalyst.min.css';
 import App from './app.vue';
 import router from './router';
+import customFrom from '../index.vue';
+let formInputComponents = {};
+formInputComponents[customFrom.name] = customFrom;
 Vue.use(ElementUI);
-Vue.use(Catalyst);
+Vue.use(Catalyst, {
+  formInputComponents
+});
 
 new Vue({
   router,
