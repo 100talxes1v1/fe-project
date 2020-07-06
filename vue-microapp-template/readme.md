@@ -1,4 +1,4 @@
-# <%=name%>
+# boston-app-<%=appName%>
 
 > <%=description%>
 

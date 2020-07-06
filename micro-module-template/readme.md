@@ -1,4 +1,4 @@
-# <%=name%>
+# boston-library-<%=libraryName%>
 
 > <%=description%>
 

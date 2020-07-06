@@ -1,5 +1,5 @@
 {
-  "name": "<%=name%>",
+  "name": "boston-library-<%=libraryName%>",
   "version": "0.1.1",
   "description": "<%=description%>",
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
   },
   "author": "<%=author%>",
   "devDependencies": {
-    "@xes/dh-boston-package-manager": "^0.3.10"
+    "@xes/dh-boston-package-manager": "^0.3.11"
   },
   "browserslist": [
     "> 1%",
