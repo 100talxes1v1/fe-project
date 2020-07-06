@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import app from './app.vue';
-import { IBostonApp } from '@xes/dh-boston-type';
+import { AbstractBostonMainApp, IBostonMainApp } from '@xes/dh-boston-type';
 import home from './pages/home/index.vue';
 import list from './pages/list/index.vue';
 import detail from './pages/detail/index.vue';
@@ -37,40 +37,22 @@ const routes = [
 ];
 
 Vue.use(VueRouter);
-const router = new VueRouter({
-  mode: 'history',
-  base: '<%=baseUrl%>/<%=appName%>/',
-  routes,
-  scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition;
-    } else {
-      if (to.hash) {
-        return {
-          selector: to.hash
-        };
-      } else {
-        return {
-          x: 0,
-          y: 0
-        };
-      }
-    }
-  }
-});
 
-export default class implements IBostonApp {
-  constructor() {
-  }
-  loaded(this: IBostonApp): Promise<void> {
+export default class extends AbstractBostonMainApp {
+  async loaded() {
+
+    const router = new VueRouter({
+      mode: 'history',
+      base: this.baseUrl,
+      routes
+    });
+
     new Vue({
-      el: this.mountElement as Element,
+      el: (this as IBostonMainApp).mountElement as Element,
       router,
       render(h) {
         return h(app);
       }
     });
-
-    return Promise.resolve();
   }
 }

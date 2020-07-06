@@ -21,8 +21,7 @@
       "needInjectFiles": {
         "package.json": [ "name", "description", "author" ],
         "readme.md": [ "name", "description" ],
-        "./src/index.js": [ "baseUrl", "appName" ],
-        "bpm.config.js": [ "baseUrl", "appName" ]
+        "bpm.config.js": [ "appName" ]
       }
     },
     "boston app vue template by ts": {
@@ -30,8 +29,7 @@
       "needInjectFiles": {
         "package.json": [ "name", "description", "author" ],
         "readme.md": [ "name", "description" ],
-        "./src/index.ts": [ "baseUrl", "appName" ],
-        "bpm.config.js": [ "baseUrl", "appName" ]
+        "bpm.config.js": [ "appName" ]
       }
     }
   },
