@@ -116,6 +116,16 @@
         "./src/index.js": [ "name" ],
         "./src/index.vue": [ "name" ]
       }
+    },
+    "catalyst logic component template": {
+      "templateFolder": "catalyst-logic-component-template",
+      "needInjectFiles": {
+        "package.json": [ "name", "description", "author" ],
+        "readme.md": [ "name", "description" ],
+        "./conf/webpack.prod.config.js": [ "name" ],
+        "./src/index.js": [ "name" ],
+        "./src/custom_logic.js": [ "name" ]
+      }
     }
   }
 }
