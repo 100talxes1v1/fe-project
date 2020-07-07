@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import app from './app.vue';
+import { AbstractBostonMainApp } from '@xes/dh-boston-type';
 import home from './pages/home/index.vue';
 import list from './pages/list/index.vue';
 import detail from './pages/detail/index.vue';
@@ -37,8 +38,9 @@ const routes = [
 
 Vue.use(VueRouter);
 
-export default {
+export default class extends AbstractBostonMainApp {
   async loaded() {
+
     const router = new VueRouter({
       mode: 'history',
       base: this.baseUrl,
@@ -53,4 +55,4 @@ export default {
       }
     });
   }
-};
+}
