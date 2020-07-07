@@ -17,7 +17,7 @@
     "vuex": "^3.1.2"
   },
   "devDependencies": {
-    "@xes/dh-boston-package-manager": "^0.3.11"
+    "@xes/dh-boston-package-manager": "^0.3.12"
   },
   "browserslist": [
     "> 1%",

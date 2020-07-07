@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import app from './app.vue';
-import { AbstractBostonMainApp, IBostonMainApp } from '@xes/dh-boston-type';
+import { AbstractBostonMainApp } from '@xes/dh-boston-type';
 import home from './pages/home/index.vue';
 import list from './pages/list/index.vue';
 import detail from './pages/detail/index.vue';
@@ -48,7 +48,7 @@ export default class extends AbstractBostonMainApp {
     });
 
     new Vue({
-      el: (this as IBostonMainApp).mountElement as Element,
+      el: this.mountElement as Element,
       router,
       render(h) {
         return h(app);
