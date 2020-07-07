@@ -106,6 +106,16 @@
         "./src/index.js": [ "name" ],
         "./src/index.vue": [ "name" ]
       }
+    },
+    "catalyst table component template": {
+      "templateFolder": "catalyst-table-component-template",
+      "needInjectFiles": {
+        "package.json": [ "name", "description", "author" ],
+        "readme.md": [ "name", "description" ],
+        "./conf/webpack.prod.config.js": [ "name" ],
+        "./src/index.js": [ "name" ],
+        "./src/index.vue": [ "name" ]
+      }
     }
   }
 }
