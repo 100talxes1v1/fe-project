@@ -9,7 +9,7 @@
   },
   "author": "<%=author%>",
   "devDependencies": {
-    "@xes/dh-boston-package-manager": "^0.3.12"
+    "@xes/dh-boston-package-manager": "^0.3.13"
   },
   "browserslist": [
     "> 1%",
