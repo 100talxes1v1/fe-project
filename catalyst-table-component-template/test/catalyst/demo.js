@@ -10,13 +10,13 @@ export default {
         "clear_search"
       ],
       "split_line": true
+    },
+    {
+      "type": "row",
+      "children": [
+        "data_table"
+      ]
     }
-    // {
-    //   "type": "row",
-    //   "children": [
-    //     "data_table"
-    //   ]
-    // }
   ],
   "content": [
     {
@@ -41,7 +41,7 @@ export default {
       "label": "搜索",
       "logic": "search_action_1",
       "trigger": {
-        "load": false,
+        "load": true,
         "watch": [
           "start_time",
           "end_time",
@@ -170,8 +170,8 @@ export default {
             "sortable": false
           },
           "label": "详细日志",
-          "width": "300px"
-        },
+          "width": "100px"
+        }
       ],
       "key_name": "dataList",
       "page_size": "page_size",

@@ -34,6 +34,7 @@
 <script>
 import routerContent from '../router/router_content';
 import pageConfig from '../../../test/catalyst/demo';
+import logListData from '../mock_data/log_list_table';
 
 export default {
   name: 'CatalystTemplatePage',
@@ -105,6 +106,16 @@ export default {
       }];
     },
     async mpDoAjaxAction(uri, method, params) {
+      if (uri === '/api/log/list') {
+        return logListData;
+      } else {
+        return {
+          list: [],
+          page: 1,
+          page_size: 20,
+          total: 0
+        };
+      }
       // let res = null;
       // if (method === 'get') {
       //   res = await this.$api.getDefault(uri, params);

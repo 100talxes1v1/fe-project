@@ -6,11 +6,11 @@ import '@xes/dh-catalyst/dist/catalyst.min.css';
 import App from './app.vue';
 import router from './router';
 import customFrom from '../index.vue';
-let formInputComponents = {};
-formInputComponents[customFrom.name] = customFrom;
+let tableFieldComponents = {};
+tableFieldComponents[customFrom.name] = customFrom;
 Vue.use(ElementUI);
 Vue.use(Catalyst, {
-  formInputComponents
+  tableFieldComponents
 });
 
 new Vue({
