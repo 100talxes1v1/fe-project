@@ -6,7 +6,7 @@
   "bostonLibraryName": "catalyst_table_<%=name%>",
   "scripts": {
     "dev": "node build/dev.js",
-    "build": "cross-env NODE_ENV=production node build/prod.js"
+    "build": "bpm build"
   },
   "author": "<%=author%>",
   "dependencies": {
@@ -27,7 +27,8 @@
     "@typescript-eslint/parser": "^2.5.0",
     "@vue/eslint-config-typescript": "^5.0.1",
     "@vue/test-utils": "^1.0.0-beta.29",
-    "@xes/dh-boston-webpack-plugin": "^0.2.12",
+    "@xes/dh-boston-package-manager": "^0.3.13",
+    "@xes/dh-boston-webpack-plugin": "^0.2.15",
     "@xes/dh-catalyst": "^2.0.1",
     "@xes/dh-component-vue-mp-ui": "^2.0.1",
     "@xes/eslint-config-dahai": "^0.1.3",
