@@ -105,6 +105,12 @@
         "./conf/webpack.prod.config.js": [ "name" ],
         "./src/index.js": [ "name" ],
         "./src/index.vue": [ "name" ]
+      },
+      "validation": {
+        "name": {
+          "rule": "^[a-z]+(_[a-z]+)*$",
+          "message": "catalyst自定义组件名称必须由小写字母和下划线组成，并且不能以下划线开头或者结尾"
+        }
       }
     },
     "catalyst table component template": {
@@ -115,6 +121,12 @@
         "./conf/webpack.prod.config.js": [ "name" ],
         "./src/index.js": [ "name" ],
         "./src/index.vue": [ "name" ]
+      },
+      "validation": {
+        "name": {
+          "rule": "^[a-z]+(_[a-z]+)*$",
+          "message": "catalyst自定义组件名称必须由小写字母和下划线组成，并且不能以下划线开头或者结尾"
+        }
       }
     },
     "catalyst logic component template": {
@@ -125,6 +137,12 @@
         "./conf/webpack.prod.config.js": [ "name" ],
         "./src/index.js": [ "name" ],
         "./src/custom_logic.js": [ "name" ]
+      },
+      "validation": {
+        "name": {
+          "rule": "^[a-z]+(_[a-z]+)*$",
+          "message": "catalyst自定义组件名称必须由小写字母和下划线组成，并且不能以下划线开头或者结尾"
+        }
       }
     }
   }
