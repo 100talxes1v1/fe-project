@@ -25,7 +25,7 @@ export default Vue.extend({
 });
 </script>
 
-<style>
+<style scoped>
 .error {
   font-size: 10vw;
 }
