@@ -5,6 +5,7 @@ module.exports = {
   name: packageInfo.name,
   type: 'library',
   entry: 'src/index.js',
+  extractCss: true,
   webpack: {
     plugins: [
       new CopyPlugin([

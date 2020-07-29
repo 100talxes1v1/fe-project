@@ -63,4 +63,5 @@ rmPromise(path.resolve(__dirname, '../dist')).then(() => {
   var server = app.listen(port, ip);
 }).catch(err => {
   let message = err.message ? err.message : err;
+  throw new Error(message);
 });
