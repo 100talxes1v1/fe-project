@@ -14,7 +14,7 @@ export default Vue.extend({
 });
 </script>
 
-<style>
+<style scoped>
 .not-found {
   font-size: 10vw;
 }

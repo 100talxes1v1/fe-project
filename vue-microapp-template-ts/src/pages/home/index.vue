@@ -25,7 +25,7 @@ export default class Home extends Vue {
 }
 </script>
 
-<style>
+<style scoped>
 .container {
   text-align: center;
 }

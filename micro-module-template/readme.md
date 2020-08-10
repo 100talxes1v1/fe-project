@@ -1,4 +1,4 @@
-# <%=name%>
+# boston-library-<%=libraryName%>
 
 > <%=description%>
 
@@ -8,15 +8,9 @@
 # install dependencies
 npm install
 
-# build for development
-npm run dev
-
-# build for production
+# build bostonLibrary
 npm run build
 
-# run lint check
-npm run lint
-
-# run unit test
-npm run karma
+# publish to bostonRegistry
+npm run deploy
 ```
