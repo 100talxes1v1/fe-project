@@ -1,19 +1,9 @@
 module.exports = {
   "root": true,
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "./tsconfig.json",
-    "tsconfigRootDir": "./"
-  },
-  "env": {
-    "es6": true,
-    "node": true
-  },
-  "plugins": ["@typescript-eslint"],
   "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:vue/strongly-recommended",
+    "@xes/dahai",
+    "@vue/typescript/recommended"
   ],
   "rules": {
     "@typescript-eslint/indent": "off",

@@ -7,7 +7,11 @@
   "scripts": {
     "dev": "bpm debug",
     "build": "bpm build",
-    "deploy": "bpm publish"
+    "deploy": "bpm publish",
+    "lint": "eslint --ext .ts,.js,.html,.vue --fix --format node_modules/eslint-friendly-formatter src test/unit",
+    "karma": "cross-env BABEL_ENV=test karma start ./test/karma.conf.js",
+    "lint:js": "eslint --ext .js,.vue,.html,.ts --fix --format node_modules/eslint-friendly-formatter src test/unit",
+    "lint:css": "stylelint src/**/*.vue,scss,css --fix"
   },
   "author": "<%=author%>",
   "dependencies": {
@@ -25,5 +29,19 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "hooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -e $GIT_PARAMS"
+  },
+  "lint-staged": {
+    "*.+(js|vue|html|ts|json)": [
+      "prettier --write"
+    ],
+    "*.+(js|vue|html|ts)": [
+      "npm run lint:js",
+      "npm run lint:css",
+      "git add"
+    ]
+  }
 }
