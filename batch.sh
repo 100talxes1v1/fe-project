@@ -1,12 +1,14 @@
-#!/bin/bash
+#!/bin/sh
+
 for file in ./*
-do
+  do
     if [ -d "$file" ]
-      echo "$file start update..."
       then
-      if [ $file != "./server-app-template-ts" ]; then
-        cmd="cd $file && seacli update --content lint-rules && cd ../"
+      echo "$file start update..."
+      isMicro=$(echo $file | grep "micro")
+      if [ $file != "./server-app-template-ts"] && [ $isMicro = "" ]; then
+        cmd="cd $file && /Users/huyuqiong/future/base/fe-sea-cli/bin/cli.js update --content lint-rules && cd ../"
         eval $cmd
       fi
     fi
-done
+  done

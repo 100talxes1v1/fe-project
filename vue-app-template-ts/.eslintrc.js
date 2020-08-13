@@ -21,23 +21,11 @@ module.exports = {
       },
       {
         "prefixWithI": "always"
+      },
+      {
+        "prefixWithI": "always"
       }
     ],
     "@typescript-eslint/explicit-function-return-type": "off"
-  },
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "./tsconfig.json",
-    "tsconfigRootDir": "./"
-  },
-  "env": {
-    "browser": true,
-    "es6": true
-  },
-  "globals": {
-    "process": "readonly"
-  },
-  "plugins": [
-    "@typescript-eslint"
-  ]
+  }
 };

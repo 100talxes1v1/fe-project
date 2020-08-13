@@ -6,8 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "bpm build",
-    "deploy": "bpm publish",
-    "lint:js": "eslint --ext .js,.ts --fix --format node_modules/eslint-friendly-formatter src test/unit"
+    "deploy": "bpm publish"
   },
   "author": "<%=author%>",
   "devDependencies": {
@@ -17,18 +16,5 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ],
-  "hooks": {
-    "pre-commit": "lint-staged",
-    "commit-msg": "commitlint -e $GIT_PARAMS"
-  },
-  "lint-staged": {
-    "*.+(js|ts|json)": [
-      "prettier --write"
-    ],
-    "*.+(js|ts)": [
-      "npm run lint:js",
-      "git add"
-    ]
-  }
+  ]
 }
