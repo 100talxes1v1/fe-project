@@ -15,7 +15,8 @@
     "lint:test": "gulp lintTest",
     "type-check": "tsc --noEmit",
     "karma": "npm run lint:test && karma start ./test/karma.conf.js",
-    "prepublishOnly": "npm run karma && npm run build"
+    "prepublishOnly": "npm run karma && npm run build",
+    "lint:js": "eslint --ext .js,.ts --fix --format node_modules/eslint-friendly-formatter src test/unit"
   },
   "author": "<%=author%>",
   "devDependencies": {
@@ -64,5 +65,18 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "hooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -e $GIT_PARAMS"
+  },
+  "lint-staged": {
+    "*.+(js|ts|json)": [
+      "prettier --write"
+    ],
+    "*.+(js|ts)": [
+      "npm run lint:js",
+      "git add"
+    ]
+  }
 }

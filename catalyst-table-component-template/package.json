@@ -6,7 +6,9 @@
   "bostonLibraryName": "catalyst_table_<%=name%>",
   "scripts": {
     "dev": "node build/dev.js",
-    "build": "bpm build"
+    "build": "bpm build",
+    "lint:js": "eslint --ext .js,.vue,.html --fix --format node_modules/eslint-friendly-formatter src test/unit",
+    "lint:css": "stylelint src/**/*.vue,scss,css --fix"
   },
   "author": "<%=author%>",
   "dependencies": {
@@ -88,5 +90,19 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "hooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -e $GIT_PARAMS"
+  },
+  "lint-staged": {
+    "*.+(js|vue|html|json)": [
+      "prettier --write"
+    ],
+    "*.+(js|vue|html)": [
+      "npm run lint:js",
+      "npm run lint:css",
+      "git add"
+    ]
+  }
 }

@@ -4,7 +4,8 @@ module.exports = {
     "plugin:vue/strongly-recommended",
     "@xes/dahai"
   ],
-  "rules": {
-   
+  "rules": {},
+  "parserOptions": {
+    "parser": "babel-eslint"
   }
 };

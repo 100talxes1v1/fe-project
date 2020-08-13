@@ -8,7 +8,8 @@
     "build": "cross-env NODE_ENV=production gulp",
     "lint": "gulp lint",
     "karma": "cross-env BABEL_ENV=test karma start ./test/karma.conf.js",
-    "prepublishOnly": "npm run build && npm run karma"
+    "prepublishOnly": "npm run build && npm run karma",
+    "lint:js": "eslint --ext .js --fix --format node_modules/eslint-friendly-formatter src test/unit"
   },
   "author": "<%=author%>",
   "devDependencies": {
@@ -48,5 +49,18 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "hooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -e $GIT_PARAMS"
+  },
+  "lint-staged": {
+    "*.+(js|json)": [
+      "prettier --write"
+    ],
+    "*.+(js)": [
+      "npm run lint:js",
+      "git add"
+    ]
+  }
 }
