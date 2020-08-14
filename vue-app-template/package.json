@@ -83,10 +83,10 @@
     "commit-msg": "commitlint -e $GIT_PARAMS"
   },
   "lint-staged": {
-    "*.+(js|vue|html|json)": [
+    "./**/*.+(js|vue|html|json)": [
       "prettier --write"
     ],
-    "*.+(js|vue|html)": [
+    "./**/*.+(js|vue|html)": [
       "npm run lint:js",
       "npm run lint:css",
       "git add"
