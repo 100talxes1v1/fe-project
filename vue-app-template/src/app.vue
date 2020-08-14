@@ -6,13 +6,9 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
 };
-aa = 1
-ssss = 111
-sss = 2
+aa = 1;
 </script>
 
-<style>
-
-</style>
+<style></style>
