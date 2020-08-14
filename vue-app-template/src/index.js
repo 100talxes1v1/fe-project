@@ -2,7 +2,7 @@ import Vue from 'vue';
 import router from './router';
 import store from './store';
 import app from './app.vue';
-
+aa = 1
 Vue.config.productionTip = false;
 /* eslint-disable no-undef */
 if (process.env.NODE_ENV === 'production') {

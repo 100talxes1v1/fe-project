@@ -9,6 +9,7 @@ export default {
   name: 'App'
 };
 aa = 1
+sss = 2
 </script>
 
 <style>
