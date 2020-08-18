@@ -31,6 +31,14 @@
         "readme.md": [ "appName", "description" ],
         "bpm.config.js": [ "appName" ]
       }
+    },
+    "boston preject app vue template": {
+      "templateFolder": "vue-microapp-project-template",
+      "needInjectFiles": {
+        "package.json": [ "appName", "description", "author" ],
+        "readme.md": [ "appName", "description" ],
+        "bpm.config.js": [ "appName" ]
+      }
     }
   },
   "----创建umd模块项目----": {
@@ -100,11 +108,49 @@
     "catalyst form component template": {
       "templateFolder": "catalyst-form-component-template",
       "needInjectFiles": {
-        "package.json": [ "name", "libraryName", "description", "author" ],
+        "package.json": [ "name", "description", "author" ],
         "readme.md": [ "name", "description" ],
-        "./conf/webpack.prod.config.js": [ "libraryName" ],
-        "./src/index.js": [ "libraryName" ],
-        "./src/index.vue": [ "libraryName" ]
+        "./conf/webpack.prod.config.js": [ "name" ],
+        "./src/index.js": [ "name" ],
+        "./src/index.vue": [ "name" ]
+      },
+      "validation": {
+        "name": {
+          "rule": "^[a-z]+(_[a-z]+)*$",
+          "message": "catalyst自定义组件名称必须由小写字母和下划线组成，并且不能以下划线开头或者结尾"
+        }
+      }
+    },
+    "catalyst table component template": {
+      "templateFolder": "catalyst-table-component-template",
+      "needInjectFiles": {
+        "package.json": [ "name", "description", "author" ],
+        "readme.md": [ "name", "description" ],
+        "./conf/webpack.prod.config.js": [ "name" ],
+        "./src/index.js": [ "name" ],
+        "./src/index.vue": [ "name" ]
+      },
+      "validation": {
+        "name": {
+          "rule": "^[a-z]+(_[a-z]+)*$",
+          "message": "catalyst自定义组件名称必须由小写字母和下划线组成，并且不能以下划线开头或者结尾"
+        }
+      }
+    },
+    "catalyst logic component template": {
+      "templateFolder": "catalyst-logic-component-template",
+      "needInjectFiles": {
+        "package.json": [ "name", "description", "author" ],
+        "readme.md": [ "name", "description" ],
+        "./conf/webpack.prod.config.js": [ "name" ],
+        "./src/index.js": [ "name" ],
+        "./src/custom_logic.js": [ "name" ]
+      },
+      "validation": {
+        "name": {
+          "rule": "^[a-z]+(_[a-z]+)*$",
+          "message": "catalyst自定义组件名称必须由小写字母和下划线组成，并且不能以下划线开头或者结尾"
+        }
       }
     }
   }
