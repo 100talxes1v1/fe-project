@@ -31,6 +31,14 @@
         "readme.md": [ "appName", "description" ],
         "bpm.config.js": [ "appName" ]
       }
+    },
+    "boston preject app vue template": {
+      "templateFolder": "vue-microapp-project-template",
+      "needInjectFiles": {
+        "package.json": [ "appName", "description", "author" ],
+        "readme.md": [ "appName", "description" ],
+        "bpm.config.js": [ "appName" ]
+      }
     }
   },
   "----创建umd模块项目----": {
