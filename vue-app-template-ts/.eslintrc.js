@@ -3,10 +3,7 @@ module.exports = {
   "extends": [
     "plugin:vue/strongly-recommended",
     "@xes/dahai",
-    "@vue/typescript/recommended",
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
+    "@vue/typescript/recommended"
   ],
   "rules": {
     "@typescript-eslint/indent": "off",
@@ -16,12 +13,6 @@ module.exports = {
     "@typescript-eslint/no-empty-function": "warn",
     "@typescript-eslint/interface-name-prefix": [
       "error",
-      {
-        "prefixWithI": "always"
-      },
-      {
-        "prefixWithI": "always"
-      },
       {
         "prefixWithI": "always"
       }
