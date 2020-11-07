@@ -59,6 +59,13 @@ export default class extends AbstractBostonMainApp {
     sync(store, this._router);
     this.applicationContext.use(BostonSyncState, { syncApp: this, debug: true })
     Vue.prototype.applicationContext = this.applicationContext;
+    Vue.prototype.$mpProductLine = function () {
+      if (this.$route.name && this.$route.name.endsWith('-foreign1v1')) {
+        return 1;
+      } else {
+        return 0;
+      }
+    };
   }
   async loaded() {
     new Vue({

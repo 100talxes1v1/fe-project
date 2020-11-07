@@ -3,6 +3,7 @@ import { AjaxRequest } from '@xes/dh-module-request';
 import { Message } from 'element-ui';
 import qs from 'qs';
 import get from '@xes/dh-module-getter';
+import store from '../store';
 
 import commonApi from './common.js'
 
@@ -36,6 +37,11 @@ const responseHandler = (res) => {
 const responseErrorHandler = (error) => {
   throw error;
 };
+ajax.registerRequestInterceptor((req) => {
+  // 注入产品线参数
+  req.headers['xes1v1_product_line'] = (store.state.route.name && store.state.route.name.endsWith('-foreign1v1')) ? 1 : 0;
+  return req;
+});
 ajax.registerResponseInterceptor(responseHandler, responseErrorHandler);
 
 

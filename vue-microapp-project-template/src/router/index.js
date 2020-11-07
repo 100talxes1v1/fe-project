@@ -6,7 +6,7 @@ import authErrorPage from '../pages/auth_error/index.vue';
 import notFound from '../pages/not_found/index.vue';
 import Home from '../pages/home/index.vue';
 Vue.use(VueRouter);
-const routes = [ 
+const routes = [
     {
     name: 'Home',
     path: '/',
@@ -29,6 +29,20 @@ const routes = [
     component: notFound
   }
 ];
+// 增加外教1对1页面的路由规则
+const foreignRoutes = [];
+const excludeRouteNames = ['login', 'error', 'notFound', 'default', 'authError'];
+routes.forEach(r => {
+  if (r.name && excludeRouteNames.includes(r.name)) {
+    return;
+  }
+  const newRoute = {
+    name: `${r.name ? r.name : 'name' + r.path.replace('/', '-')}-foreign1v1`,
+    path: `/foreign1v1${r.path}`
+  };
+  foreignRoutes.push(Object.assign({}, r, newRoute));
+});
+routes.push(...foreignRoutes);
 
 const routerCreate = (baseUrl) => {
   const prefixPath = baseUrl.substring(0, baseUrl.length - 1)
