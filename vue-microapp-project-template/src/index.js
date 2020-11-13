@@ -13,6 +13,7 @@ import authMixin from '@/mixins/authMixin';
 import { env, protocol } from '@xes/dh-module-env';
 import { saInit, saRegisterPage} from '@xes/dh-sensor';
 import get from '@xes/dh-module-getter';
+import productLinePlugin from '@xes/dh-module-product-line';
 
 try {
   const userInfo = JSON.parse(window.localStorage.getItem('userInfo')) || {};
@@ -40,6 +41,7 @@ try {
 Vue.use(ElementUI);
 Vue.use(CommonTable);
 Vue.mixin(authMixin);
+Vue.use(productLinePlugin);
 
 Vue.prototype.$api = apiFn;
 export default class extends AbstractBostonMainApp {
