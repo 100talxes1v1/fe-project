@@ -39,7 +39,7 @@ const responseErrorHandler = (error) => {
 };
 ajax.registerRequestInterceptor((req) => {
   // 注入产品线参数
-  req.headers['Dahai-Biz-Product-Line'] = getProductLine();
+  req.headers['X-Trailer-Biz-Product-Line'] = getProductLine();
   return req;
 });
 ajax.registerResponseInterceptor(responseHandler, responseErrorHandler);
