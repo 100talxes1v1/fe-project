@@ -61,9 +61,9 @@ let config = {
     path: path.resolve(__dirname, '../dist'),
     filename: 'index.js',
     publicPath: '',
-    library: 'catalyst_form_<%=libraryName%>_' + version,
+    library: 'catalyst_form_<%=name%>_' + version,
 		libraryTarget: 'umd',
-    jsonpFunction: 'webpackJsonp_catalyst_form_<%=libraryName%>_' + version
+    jsonpFunction: 'webpackJsonp_catalyst_form_<%=name%>_' + version
   },
 	externals: [__externalConfig()],
   module: {
@@ -126,7 +126,8 @@ let config = {
     new CopyPlugin([
       { from: 'meta.json', to: '../dist' },
       { from: 'readme.md', to: '../dist' },
-      { from: 'thumbnail.png', to: '../dist' }
+      { from: 'thumbnail.png', to: '../dist' },
+      { from: 'custom_logo.jpg', to: '../dist' }
     ])
   ]
 };

@@ -29,20 +29,6 @@ const routes = [
     component: notFound
   }
 ];
-// 增加外教1对1页面的路由规则
-const foreignRoutes = [];
-const excludeRouteNames = ['login', 'error', 'notFound', 'default', 'authError'];
-routes.forEach(r => {
-  if (r.name && excludeRouteNames.includes(r.name)) {
-    return;
-  }
-  const newRoute = {
-    name: `${r.name ? r.name : 'name' + r.path.replace('/', '-')}-foreign1v1`,
-    path: `/foreign1v1${r.path}`
-  };
-  foreignRoutes.push(Object.assign({}, r, newRoute));
-});
-routes.push(...foreignRoutes);
 
 const routerCreate = (baseUrl) => {
   const prefixPath = baseUrl.substring(0, baseUrl.length - 1)

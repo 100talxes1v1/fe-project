@@ -1,0 +1,14 @@
+{
+  "key_name": {
+    "require": true,
+    "type": "string",
+    "describe": "绑定的数据字段名称，如果绑定多个字段传递字符串类型数组，预设类型中keyword、calendar类型组件支持传递数组",
+    "default": ""
+  },
+  "custom_text": {
+    "require": true,
+    "type": "string",
+    "describe": "展示文字",
+    "default": "filed"
+  }
+}

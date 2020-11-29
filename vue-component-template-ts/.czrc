@@ -1,0 +1,33 @@
+{
+  "path": "node_modules/cz-conventional-changelog",
+  "types": {
+    "feat": {
+      "description": "新功能",
+      "title": "Features"
+    },
+    "fix": {
+      "description": "修复bugs",
+      "title": "Bug Fixes"
+    },
+    "docs": {
+      "description": "仅仅是文档的修改",
+      "title": "Documentation"
+    },
+    "style": {
+      "description": "格式, 不影响代码运行的变动",
+      "title": "Styles"
+    },
+    "refactor": {
+      "description": "重构, 即不是新增功能，也不是修改bug的代码变动",
+      "title": "Code Refactoring"
+    },
+    "test": {
+      "description": "添加缺失的测试或更正现有的测试",
+      "title": "Tests"
+    },
+    "chore": {
+      "description": "构建过程或辅助工具的变动",
+      "title": "Chores"
+    }
+  }
+}
