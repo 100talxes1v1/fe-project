@@ -17,7 +17,7 @@
     "@xes/dh-guardian-sdk": "^0.3.8",
     "@xes/dh-module-env": "^0.2.1",
     "@xes/dh-module-getter": "^0.1.6",
-    "@xes/dh-module-product-line": "^0.1.5",
+    "@xes/dh-module-product-line": "^0.2.1",
     "@xes/dh-module-request": "^0.1.10",
     "@xes/dh-module-url": "^0.1.4",
     "@xes/dh-sensor": "^2.1.8",
