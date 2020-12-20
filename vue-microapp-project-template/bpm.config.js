@@ -11,12 +11,8 @@ module.exports = {
     }
   },
   proxyTable: {
-    '/mock/967/api': {
-      target: 'http://au.test-dahai.com',
-      changeOrigin: true
-    },
     '/api': {
-      target: 'http://wangxiaoronghe-gateway.test-dahai.com',
+      target: 'http://superqa-gateway.test-dahai.com',
       changeOrigin: true
     },
   }
