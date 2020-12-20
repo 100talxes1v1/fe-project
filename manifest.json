@@ -32,7 +32,7 @@
         "bpm.config.js": [ "appName" ]
       }
     },
-    "boston 1v1 preject app vue template": {
+    "boston app vue template for 1v1 business": {
       "templateFolder": "vue-microapp-project-template",
       "needInjectFiles": {
         "package.json": [ "appName", "description", "author" ],
