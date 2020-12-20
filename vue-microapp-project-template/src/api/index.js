@@ -9,6 +9,14 @@ import { customErrorMessages, errorWhiteList } from '@/common/api_error_code';
 
 const apis = getApis();
 
+const getApiPrefix = url => {
+  if (!url.startsWith('/mock')) {
+    // eslint-disable-next-line
+    return IS_MOCK ? MOCK_API_URL + url ?? url : url;
+  }
+  return url;
+};
+
 const ajax = new AjaxRequest({
   headers: {
     'Dahai-Product-Line': 'management-platform'
@@ -69,11 +77,11 @@ let apiFn = {
 Object.keys(apis).forEach(item => {
   if (item.includes('post')) {
     apiFn[item] = (params, toCamelCase = false, withCredentials = true) => {
-      return ajax.post(apis[item], params, { withCredentials, toCamelCase });
+      return ajax.post(getApiPrefix(apis[item]), params, { withCredentials, toCamelCase });
     };
   } else {
     apiFn[item] = (params, toCamelCase = false, withCredentials = true, contentType = {}) => {
-      return ajax.get(apis[item], params, { withCredentials, toCamelCase, contentType });
+      return ajax.get(getApiPrefix(apis[item]), params, { withCredentials, toCamelCase, contentType });
     };
   }
 });

@@ -1,0 +1,11 @@
+# Don't check auto-generated stuff into git
+
+# floders
+*/dist
+build
+*/node_modules
+node_modules
+.cache
+
+# files
+npm-debug.log
