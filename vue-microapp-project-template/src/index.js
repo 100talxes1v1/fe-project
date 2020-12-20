@@ -42,6 +42,7 @@ try {
 
 Vue.use(ElementUI);
 Vue.use(CommonTable);
+Vue.use(MpComponent);
 Vue.mixin(authMixin);
 Vue.use(productLinePlugin);
 Vue.mixin(productLineMixin);
