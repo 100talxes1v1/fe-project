@@ -7,7 +7,7 @@ import { safeConvertToEnum, getProductLineFromLocal } from '@xes/dh-module-produ
 // 项目初始化时调用
 let isFirstLoad = true;
 export function fetchAuth() {
-  if (isFirstLoad && (get(store, 'state.auth.authTree', []).length === 0 || Object.keys(get(store, 'state.auth.pageProductLineMap', {})).length == 0)) {
+  if (isFirstLoad && (get(store, 'state.auth.authTree', []).length === 0 || Object.keys(get(store, 'state.auth.pageProductLineMap', {})).length === 0)) {
     isFirstLoad = false;
     return Promise.all([
       // 获取配置属性
