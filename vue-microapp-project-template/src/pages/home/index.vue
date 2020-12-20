@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header title="我的线索"></Header>
+    <Header title=""></Header>
     home
   </div>
 </template>

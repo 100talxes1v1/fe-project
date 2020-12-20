@@ -13,7 +13,9 @@ import authMixin from '@/mixins/authMixin';
 import { env, protocol } from '@xes/dh-module-env';
 import { saInit, saRegisterPage} from '@xes/dh-sensor';
 import get from '@xes/dh-module-getter';
-import productLinePlugin from '@xes/dh-module-product-line';
+import MpComponent from '@xes/fe-mp-business-components';
+import '@xes/fe-mp-business-components/dist/fe-mp-business-components.min.css';
+import productLinePlugin, { productLineMixin } from '@xes/dh-module-product-line';
 
 try {
   const userInfo = JSON.parse(window.localStorage.getItem('userInfo')) || {};
@@ -35,13 +37,14 @@ try {
     u_id,
   });
 } catch (error) {
-    console.log(error)
+  console.log(error)
 }
 
 Vue.use(ElementUI);
 Vue.use(CommonTable);
 Vue.mixin(authMixin);
 Vue.use(productLinePlugin);
+Vue.mixin(productLineMixin);
 
 Vue.prototype.$api = apiFn;
 export default class extends AbstractBostonMainApp {
@@ -57,7 +60,7 @@ export default class extends AbstractBostonMainApp {
     }
   }
   async install() {
-    this._router = routerCreate(this.baseUrl);
+    this._router = routerCreate(this.baseUrl, this.applicationContext);
     sync(store, this._router);
     this.applicationContext.use(BostonSyncState, { syncApp: this, debug: true })
     Vue.prototype.applicationContext = this.applicationContext;
@@ -75,7 +78,7 @@ export default class extends AbstractBostonMainApp {
   sync() {
     return {
       auth(value, source) {
-        if(get(value, 'authTree', []).length > 0) {
+        if (get(value, 'authTree', []).length > 0) {
           store.commit('auth/updateAuthList', value.authTree)
         }
       },

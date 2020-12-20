@@ -1,5 +1,5 @@
 <template>
-<div class="clues-app-title">
+<div class="<%=appName%>-app-title">
   {{title}}
 </div>
 </template>
@@ -14,7 +14,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.clues-app-title{
+.<%=appName%>-app-title{
   width: 100%;
   height: 48px;
   line-height: 48px;

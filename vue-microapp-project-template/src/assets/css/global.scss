@@ -1,0 +1,28 @@
+.<%=appName%>-app-wrap {
+  @import './default.scss';
+  .el-form-item__error {
+    padding-top: 4px;
+  }
+  .el-pagination {
+    padding: 20px 0;
+  }
+  .el-date-editor .el-range-input {
+    width: 43%;
+  }
+  .el-range-editor--mini .el-range-input {
+    font-size: 14px;
+  }
+  .el-checkbox-button__inner {
+    border: 1px solid #dcdfe6;
+  }
+}
+.el-main {
+  padding: 4px 20px !important;
+  background: #e8e8e8 !important;
+}
+
+.a-link {
+  margin-right: 5px;
+  color: #38f;
+  cursor: pointer;
+}

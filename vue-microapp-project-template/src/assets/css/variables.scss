@@ -1,0 +1,37 @@
+$primary:#3388FF;
+$primary-txt-important: #262626; //重要标题
+$primary-txt-minor: #262626; // 次要标题
+$primary-txt-content: #666666; //填写内容
+$primary-txt-normal: #999999; //默认内容&默认线框
+$primary-txt-disable: #e7e7e7; // 不可使用
+$primary-bg: #E8E8E8; // 背景色 & 禁用状态颜色
+
+// 辅助色
+$primary-error: #FA4F42;
+$primary-success: #4BC972;
+
+// button
+$btn-bg-color: $primary;
+$btn-bg-hover-color: #4AA1FF;
+$btn-bg-active-color: #0269DA;
+
+// table
+$table-tr-hover: #D6E7FF;
+
+// checkbox
+$checkbox-bg-color:#3388FF;
+$checkbox-bd-color:#3388FF;
+
+$--color-form-item-label:#262626;
+$--color-base-border:#999999FF;
+$--color-white:#ffffff;
+
+//tag
+$--color-tag-light:#666666FF;
+$--bg-tag-light:#D6E7FFFF;
+
+// tree
+$tree-item-hover-color: #D6E7FF;
+$tree-item-hover-text-color: $primary;
+
+$--color-primary: $primary;

@@ -1,5 +1,5 @@
 <template>
-  <div class="clues-app-wrap">
+  <div class="<%=appName%>-app-wrap">
     <router-view />
   </div>
 </template>
@@ -10,9 +10,6 @@ export default {
 };
 </script>
 
-<style scoped>
-.clues-app-wrap{
-  height: 100%;
-  overflow-y: auto;
-}
+<style lang="scss">
+@import './assets/css/global.scss';
 </style>

@@ -32,12 +32,15 @@
         "bpm.config.js": [ "appName" ]
       }
     },
-    "boston preject app vue template": {
+    "boston 1v1 preject app vue template": {
       "templateFolder": "vue-microapp-project-template",
       "needInjectFiles": {
         "package.json": [ "appName", "description", "author" ],
         "readme.md": [ "appName", "description" ],
-        "bpm.config.js": [ "appName" ]
+        "bpm.config.js": [ "appName" ],
+        "./src/app.vue": [ "appName" ],
+        "./src/assets/css/global.scss": [ "appName" ],
+        "./src/components/header/index.vue": [ "appName" ]
       }
     }
   },

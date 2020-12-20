@@ -1,6 +1,7 @@
 import apiFn from '@/api/index';
 import { toCamelCase } from '@xes/dh-module-request';
 import urlHelper from '@xes/dh-module-url';
+import { EnumProductLine, safeConvertToEnum } from '@xes/dh-module-product-line';
 
 const state = () => ({
   // 权限列表 - 未处理
@@ -16,7 +17,7 @@ export const mutations = {
   updatePageProductLine(state, rolePageList) {
     const result = {};
     rolePageList.forEach(rolePage => {
-      const pl = rolePage.biz_product_line;
+      const pl = safeConvertToEnum(rolePage.biz_product_line, EnumProductLine.k12);
       const pages = rolePage.page_url;
       if (pages && pages.length > 0) {
         pages.forEach(p => {
@@ -51,18 +52,9 @@ const actions = {
     });
   },
   async getProductLineRolePage({ commit }) {
-    // const data = await apiFn.getProductLineRolePage(); TODO:
-    const data = await Promise.resolve({
-      result: {
-        list: [
-          { role_id: 1, biz_product_line: 1, page_url: [ '/plus/portal/list/role' ] },
-          { role_id: 2, biz_product_line: 2, page_url: [ '/plus/portal/home', '/plus/portal/clue/my' ] },
-          { role_id: 3, biz_product_line: 2, page_url: [ '/plus/portal/authority/organization', '/plus/portal/authority/menu-management' ] }
-        ]
-      }
-    });
-    if (data.result.list && data.result.list.length > 0) {
-      commit('updatePageProductLine', data.result.list);
+    const data = await apiFn.getProductLinePage();
+    if (data.result && data.result.length > 0) {
+      commit('updatePageProductLine', data.result);
     }
   }
 };
