@@ -1,7 +1,5 @@
-import { reactive } from 'vue';
-
 export function main() {
-  return reactive({ a: 'hello world' });
+  return 'hello world';
 }
 
 console.log(main());
