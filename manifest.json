@@ -41,7 +41,7 @@
       }
     }
   },
-  "----创建umd模块项目----": {
+  "----创建库项目----": {
     "pure js template": {
       "templateFolder": "pure-js-template",
       "needInjectFiles": {
@@ -56,6 +56,14 @@
         "package.json": [ "name", "description", "libraryName", "author" ],
         "readme.md": [ "name", "description" ],
         "rollup.config.js": [ "libraryName" ]
+      }
+    },
+    "vite lib template by ts": {
+      "templateFolder": "vite-lib-template",
+      "needInjectFiles": {
+        "package.json": [ "name", "description", "author" ],
+        "readme.md": [ "name", "description" ],
+        "vite.config.js": [ "libraryName" ]
       }
     }
   },
@@ -74,6 +82,13 @@
         "package.json": [ "name", "description", "author" ],
         "readme.md": [ "name", "description" ],
         "./conf/webpack.prod.config.js": [ "htmlTitle" ]
+      }
+    },
+    "vue3 app template by ts": {
+      "templateFolder": "vue3-app-template",
+      "needInjectFiles": {
+        "package.json": [ "name", "description", "author" ],
+        "readme.md": [ "name", "description" ]
       }
     }
   },

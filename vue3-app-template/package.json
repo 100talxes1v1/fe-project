@@ -1,6 +1,8 @@
 {
-  "name": "vue3-demo",
+  "name": "<%=name%>",
   "version": "0.0.0",
+  "description": "<%=description%>",
+  "author": "<%=author%>",
   "scripts": {
     "lint": "eslint --ext .ts,.tsx,.vue src --fix && stylelint src/**/*.{css,scss,vue} --fix",
     "predo": "npm run lint && vue-tsc --noEmit",

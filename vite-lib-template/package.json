@@ -1,15 +1,17 @@
 {
-  "name": "vite-lib",
+  "name": "<%=name%>",
   "version": "0.1.1",
+  "description": "<%=description%>",
+  "author": "<%=author%>",
   "files": [
     "dist"
   ],
-  "main": "./dist/my-lib.umd.js",
-  "module": "./dist/my-lib.es.js",
+  "main": "./dist/<%=name%>.umd.js",
+  "module": "./dist/<%=name%>.es.js",
   "exports": {
     ".": {
-      "import": "./dist/my-lib.es.js",
-      "require": "./dist/my-lib.umd.js"
+      "import": "./dist/<%=name%>.es.js",
+      "require": "./dist/<%=name%>.umd.js"
     }
   },
   "scripts": {
