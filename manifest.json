@@ -61,7 +61,7 @@
     "vite lib template by ts": {
       "templateFolder": "vite-lib-template",
       "needInjectFiles": {
-        "package.json": [ "name", "description", "author" ],
+        "package.json": [ "name", "description", "author", "fileName" ],
         "readme.md": [ "name", "description" ],
         "./vite.config.ts": [ "libraryName", "fileName" ]
       }
