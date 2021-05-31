@@ -63,7 +63,7 @@
       "needInjectFiles": {
         "package.json": [ "name", "description", "author" ],
         "readme.md": [ "name", "description" ],
-        "./vite.config.js": [ "libraryName" ]
+        "./vite.config.ts": [ "libraryName", "fileName" ]
       }
     }
   },

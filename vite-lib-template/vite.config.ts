@@ -40,7 +40,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
-      name: '<%=libraryName%>'
+      name: '<%=libraryName%>',
+      fileName: '<%=fileName%>'
     },
     minify: true,
     sourcemap: true,
