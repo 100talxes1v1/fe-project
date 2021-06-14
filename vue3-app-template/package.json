@@ -11,7 +11,8 @@
     "build:dev": "npm run predo && vite build --mode development",
     "build:test": "npm run predo && vite build --mode test",
     "build": "npm run predo && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "release": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
     "vue": "^3.0.5",
@@ -28,6 +29,7 @@
     "@vue/compiler-sfc": "^3.0.5",
     "autoprefixer": "^10.2.6",
     "commitizen": "^4.2.4",
+    "conventional-changelog-cli": "^2.1.1",
     "cz-conventional-changelog": "^3.3.0",
     "cz-customizable": "^6.3.0",
     "eslint": "^7.27.0",
