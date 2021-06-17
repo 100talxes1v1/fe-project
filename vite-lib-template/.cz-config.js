@@ -68,7 +68,7 @@ module.exports = {
   },
 
   // 设置只有 type 选择了 feat 或 fix，才询问 breaking message
-  allowBreakingChanges: ['feat'],
+  allowBreakingChanges: ['feat', 'fix'],
 
   // 跳过要询问的步骤
   // skipQuestions: ['body', 'footer'],
