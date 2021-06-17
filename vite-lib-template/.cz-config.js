@@ -68,10 +68,10 @@ module.exports = {
   },
 
   // 设置只有 type 选择了 feat 或 fix，才询问 breaking message
-  allowBreakingChanges: ['feat', 'fix'],
+  allowBreakingChanges: ['feat'],
 
   // 跳过要询问的步骤
-  skipQuestions: ['body', 'footer'],
+  // skipQuestions: ['body', 'footer'],
 
   // subject 限制长度
   subjectLimit: 100,
