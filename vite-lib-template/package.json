@@ -8,6 +8,7 @@
   ],
   "main": "./dist/<%=fileName%>.umd.js",
   "module": "./dist/<%=fileName%>.es.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/<%=fileName%>.es.js",
