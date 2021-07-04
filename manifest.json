@@ -90,7 +90,15 @@
         "package.json": [ "name", "description", "author" ],
         "readme.md": [ "name", "description" ]
       }
-    }
+    },
+    "vue3 app webpack template by ts": {
+      "templateFolder": "vue3-app-webpack-template",
+      "needInjectFiles": {
+        "package.json": [ "name", "description", "author" ],
+        "readme.md": [ "name", "description" ],
+        "./conf/webpack.prod.config.js": [ "htmlTitle" ]
+      }
+    },
   },
   "----创建UI组件应用----": {
     "vue component template": {
