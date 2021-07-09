@@ -98,7 +98,7 @@
         "readme.md": [ "name", "description" ],
         "./conf/webpack.prod.config.js": [ "htmlTitle" ]
       }
-    },
+    }
   },
   "----创建UI组件应用----": {
     "vue component template": {
