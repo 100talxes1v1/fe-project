@@ -42,8 +42,7 @@ var testConfig = merge(baseConfig, {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
     alias: {
-      '@': __path_src(),
-      'vue$': 'vue/dist/vue.esm.js'
+      '@': __path_src()
     }
   },
   module: {

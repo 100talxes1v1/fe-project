@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import home from '../../../src/pages/home/index.vue';
+import home from '../../../src/pages/home/index';
 
 describe('index_test', function () {
   before(function () {
@@ -20,6 +20,6 @@ describe('index_test', function () {
 
   it('should_be_rendered_correctly', async () => {
     const wrapper = shallowMount(home);
-    expect(wrapper.find('h2').text()).to.be.equal('Hello world!');
+    expect(wrapper.find('div').text()).to.be.equal('home');
   });
 });
