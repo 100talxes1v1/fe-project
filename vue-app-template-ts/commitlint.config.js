@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['@xes/dh-commitlint-config'],
+  extends: ['@commitlint/config-conventional'],
 }
