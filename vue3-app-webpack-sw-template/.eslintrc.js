@@ -13,7 +13,10 @@ module.exports = {
     },
     "parser": "@typescript-eslint/parser",
     "sourceType": "module",
-    "project": "./tsconfig.json",
+    "project": [
+      "./tsconfig.json",
+      "./src/sw/tsconfig.json"
+    ],
     "extraFileExtensions": [".vue"],
     "jsxPragma": "h",
     "jsxFragmentName": "Fragment"

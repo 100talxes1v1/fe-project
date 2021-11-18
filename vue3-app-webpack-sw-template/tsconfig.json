@@ -39,5 +39,8 @@
     "./src/**/*.tsx",
     "./src/**/*.vue",
     "./types/**/*.d.ts"
+  ],
+  "exclude": [
+    "./src/sw/serviceWorker.ts"
   ]
 }

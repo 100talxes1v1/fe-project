@@ -3,6 +3,7 @@ var webpack = require('webpack');
 var baseConfig = require('./webpack.base.config');
 var merge = require('webpack-merge');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 function __path_src() {
 	return path.resolve(__dirname, '../src');
@@ -93,6 +94,9 @@ let config = {
     ]
   },
   plugins: [
+    new WorkboxPlugin.InjectManifest({
+      swSrc: './src/sw/serviceWorker.ts'
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       title: 'development',

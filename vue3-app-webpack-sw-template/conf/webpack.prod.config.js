@@ -4,6 +4,7 @@ var merge = require('webpack-merge');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 function __path_src() {
 	return path.resolve(__dirname, '../src');
@@ -117,6 +118,9 @@ let config = {
       cssProcessorOptions: {
         safe: true
       }
+    }),
+    new WorkboxPlugin.InjectManifest({
+      swSrc: './src/sw/serviceWorker.ts'
     }),
     new HtmlWebpackPlugin({
       title: '<%=htmlTitle%>',

@@ -18,7 +18,12 @@
     "@babel/runtime-corejs3": "^7.5.5",
     "tailwindcss": "^2.2.4",
     "vue": "^3.0.5",
-    "vue-router": "^4.0.3"
+    "vue-router": "^4.0.3",
+    "workbox-cacheable-response": "^6.4.1",
+    "workbox-expiration": "^6.4.1",
+    "workbox-precaching": "^6.4.1",
+    "workbox-routing": "^6.4.1",
+    "workbox-strategies": "^6.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -99,11 +104,12 @@
     "url-loader": "^2.1.0",
     "vue-loader": "^15.7.1",
     "vue-template-compiler": "^2.6.10",
+    "vue-tsc": "^0.29.5",
     "webpack": "^4.36.1",
     "webpack-dev-middleware": "^3.7.0",
     "webpack-hot-middleware": "^2.25.0",
     "webpack-merge": "^4.2.1",
-    "vue-tsc": "^0.0.24"
+    "workbox-webpack-plugin": "^6.4.1"
   },
   "browserslist": [
     "> 1%",

@@ -103,7 +103,7 @@
     "webpack-dev-middleware": "^3.7.0",
     "webpack-hot-middleware": "^2.25.0",
     "webpack-merge": "^4.2.1",
-    "vue-tsc": "^0.0.24"
+    "vue-tsc": "^0.29.5"
   },
   "browserslist": [
     "> 1%",

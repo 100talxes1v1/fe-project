@@ -98,6 +98,14 @@
         "readme.md": [ "name", "description" ],
         "./conf/webpack.prod.config.js": [ "htmlTitle" ]
       }
+    },
+    "vue3 app webpack template by ts (with service worker)": {
+      "templateFolder": "vue3-app-webpack-sw-template",
+      "needInjectFiles": {
+        "package.json": [ "name", "description", "author" ],
+        "readme.md": [ "name", "description" ],
+        "./conf/webpack.prod.config.js": [ "htmlTitle" ]
+      }
     }
   },
   "----创建UI组件应用----": {
