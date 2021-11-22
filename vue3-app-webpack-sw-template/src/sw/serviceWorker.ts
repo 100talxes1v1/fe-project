@@ -2,27 +2,20 @@
  * service worker
  */
 
-import { precacheAndRoute } from 'workbox-precaching';
+import { precacheAndRoute, cleanupOutdatedCaches } from 'workbox-precaching';
 
-console.log('hello in service worker!');
-const swScope: ServiceWorkerGlobalScope = self as any;
+const swScope: ServiceWorkerGlobalScope & { version: string } = self as any;
+const workerVersion = SERVICE_WORKER_VERSION;
+swScope.version = workerVersion;
+function log(...args: any[]) {
+  console.log(`[worker version: ${workerVersion}]`, ...args);
+}
 
-precacheAndRoute(self.__WB_MANIFEST);
-
-swScope.addEventListener('install', (evt: ExtendableEvent) => {
-  console.log('sw installing...', evt);
-
-  // evt.waitUntil(Promise.resolve().then((...args) => {
-  //   console.log('sw installed...', ...args);
-  // }).catch((...e) => {
-  //   console.log('sw install error: ', ...e);
-  // }));
-  evt.waitUntil(
-    caches.open('v1').then((cache) => {
-      cache.add('/horse.png');
-    })
-  );
-});
+precacheAndRoute([
+  { url: '/', revision: workerVersion },
+  ...self.__WB_MANIFEST
+]);
+cleanupOutdatedCaches();
 
 swScope.addEventListener('activate', (evt: ExtendableEvent) => {
   console.log('sw activating...', evt);
@@ -37,25 +30,6 @@ swScope.addEventListener('activate', (evt: ExtendableEvent) => {
         console.log('sw activate error: ', ...e);
       })
   );
-});
-
-swScope.addEventListener('fetch', (evt: FetchEvent) => {
-  const url = new URL(evt.request.url);
-  console.log('sw fetching: ', url.href);
-  if (url.origin === location.origin && url.pathname === '/cat.png') {
-    caches
-      .match('/horse.png')
-      .then((res) => {
-        if (res) {
-          evt.respondWith(res);
-        } else {
-          // todo: res is undefined
-        }
-      })
-      .catch((error) => {
-        // todo: error handle
-      });
-  }
 });
 
 swScope.addEventListener('message', (...args) => {
