@@ -2,7 +2,7 @@ var path = require('path');
 var VueLoaderPlugin = require('vue-loader/lib/plugin');
 var DotenvWebpack = require('dotenv-webpack');
 var { DefinePlugin } = require('webpack');
-var getAppVersion = require('./version.js');
+var { getAppVersion } = require('./version.js');
 
 const envConfigPath = {
   development: path.resolve(__dirname, '../.env.development'), // 开发环境配置
