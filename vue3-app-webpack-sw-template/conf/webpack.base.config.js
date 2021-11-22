@@ -2,6 +2,7 @@ var path = require('path');
 var VueLoaderPlugin = require('vue-loader/lib/plugin');
 var DotenvWebpack = require('dotenv-webpack');
 var { DefinePlugin } = require('webpack');
+var getAppVersion = require('./version.js');
 
 const envConfigPath = {
   development: path.resolve(__dirname, '../.env.development'), // 开发环境配置
@@ -172,7 +173,7 @@ module.exports = {
       path: envConfigPath[process.env.NODE_ENV] // 根据环境配置文件路径
     }),
     new DefinePlugin({
-      SERVICE_WORKER_VERSION: (new Date()).getTime()
+      SERVICE_WORKER_VERSION: getAppVersion()
     })
   ]
 };
