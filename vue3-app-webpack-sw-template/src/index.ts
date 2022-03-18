@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import App from './app';
 import router from '@/router';
 import '@/assets/css/tailwind.css';
+import { Workbox } from 'workbox-window';
 
 // Check that service workers are supported
 if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {

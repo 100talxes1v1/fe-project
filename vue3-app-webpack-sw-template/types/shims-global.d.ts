@@ -1,4 +1,5 @@
 import * as Chai from 'chai';
+import { Workbox } from 'workbox-window';
 
 declare global {
   interface Window {
