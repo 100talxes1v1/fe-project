@@ -1,6 +1,6 @@
 {
   "name": "<%=name%>",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "<%=description%>",
   "scripts": {
     "lint": "eslint --ext .ts,.js,.html,.vue --fix --format node_modules/eslint-friendly-formatter src test/unit && stylelint src/**/*.{css,scss,vue} --fix",

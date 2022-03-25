@@ -1,6 +1,6 @@
 {
   "name": "<%=name%>",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "description": "<%=description%>",
   "main": "dist/<%=libraryName%>.min.js",
   "module": "dist/<%=libraryName%>.esm.js",
