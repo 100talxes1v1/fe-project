@@ -10,7 +10,7 @@
     "build": "npm run predo && vite build"
   },
   "keywords": [],
-  "author": "yx",
+  "author": "<%=author%>",
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",

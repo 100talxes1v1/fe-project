@@ -1,6 +1,6 @@
 {
-  "name": "pnpm-demo",
-  "description": "pnpm demo",
+  "name": "<%=name%>",
+  "description": "<%=description%>",
   "version": "0.1.0",
   "main": "packages/client/dist/main.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "bundle": "npm run build && electron-builder -mwl"
   },
   "keywords": [],
-  "author": "yx",
+  "author": "<%=author%>",
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",

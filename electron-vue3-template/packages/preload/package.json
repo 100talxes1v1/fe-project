@@ -2,7 +2,7 @@
   "name": "preload",
   "version": "0.1.0",
   "description": "electron preload script",
-  "author": "yx",
+  "author": "<%=author%>",
   "files": [
     "dist"
   ],

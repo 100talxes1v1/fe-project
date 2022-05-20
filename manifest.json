@@ -184,5 +184,17 @@
         }
       }
     }
+  },
+  "----创建electron应用": {
+    "electron app template by vue3": {
+      "templateFolder": "electron-vue3-template",
+      "needInjectFiles": {
+        "package.json": [ "name", "description", "author" ],
+        "electron-builder.json5": [ "appId" ],
+        "./packages/client/package.json": [ "author" ],
+        "./packages/preload/package.json": [ "author" ],
+        "./packages/render/package.json": [ "author" ]
+      }
+    }
   }
 }
