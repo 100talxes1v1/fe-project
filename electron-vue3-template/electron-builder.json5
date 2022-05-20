@@ -1,0 +1,42 @@
+/**
+ * @see https://www.electron.build/configuration/configuration
+ */
+{
+  "appId": "electron-app",
+  "asar": true,
+  "electronDownload": {
+    "version": "18.2.4",
+    "cache": "electronCache"
+  },
+  "directories": {
+    "output": "release/${version}"
+  },
+  "files": [
+    "packages/client/dist/**/*",
+    "packages/preload/dist/**/*",
+    "packages/render/dist/**/*"
+  ],
+  "mac": {
+    "artifactName": "${productName}_${version}.${ext}",
+    "target": [
+      "dir"
+    ]
+  },
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": [
+          "x64"
+        ]
+      }
+    ],
+    "artifactName": "${productName}_${version}.${ext}"
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "deleteAppDataOnUninstall": false
+  }
+}

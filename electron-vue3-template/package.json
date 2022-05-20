@@ -1,0 +1,41 @@
+{
+  "name": "pnpm-demo",
+  "description": "pnpm demo",
+  "version": "0.1.0",
+  "main": "packages/client/dist/main.js",
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "node scripts/dev.mjs",
+    "build:debug": "cross-env NODE_DEBUG=debug node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "bundle": "npm run build && electron-builder -mwl"
+  },
+  "keywords": [],
+  "author": "yx",
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "chalk": "^5.0.0",
+    "commitizen": "^4.2.4",
+    "conventional-changelog-cli": "^2.1.1",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.3.0",
+    "dotenv": "^16.0.0",
+    "electron-builder": "^23.0.3",
+    "get-stream": "^6.0.1",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "ora": "^5.4.1",
+    "vite": "^2.9.7"
+  },
+  "lint-staged": {
+    "packages/*/src/**/*.{ts,tsx,vue}": "eslint --fix",
+    "packages/*/src/**/*.{css,scss,vue}": "stylelint --fix"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+.debug.env
+.history
+stats.html
+tmp
+**/.tmp
+release
+.pnpm-debug.log
+carui_config
+packages/client/proto
+packages/preload/proto
