@@ -17,7 +17,7 @@
   },
   "scripts": {
     "lint": "eslint --ext .ts,.tsx,.vue src --fix",
-    "predo": "npm run lint && vue-tsc --noEmit",
+    "predo": "npm run lint && tsc --noEmit",
     "dev": "vite",
     "build": "npm run predo && vite build && npm run build:type",
     "build:type": "tsc --emitDeclarationOnly --outDir dist",

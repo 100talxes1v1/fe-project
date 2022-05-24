@@ -4,7 +4,7 @@
   "description": "electron client app",
   "scripts": {
     "lint": "eslint --ext .ts src --fix",
-    "predo": "npm run lint && vue-tsc --noEmit",
+    "predo": "npm run lint && tsc --noEmit",
     "dev": "npm run build:dev && electron ./dist/main.js",
     "build:dev": "npm run predo && vite build --mode development",
     "build": "npm run predo && vite build"

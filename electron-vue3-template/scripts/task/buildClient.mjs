@@ -6,6 +6,7 @@ import getStream from 'get-stream';
 import ora from 'ora';
 import chalk from 'chalk';
 import { createServer, build } from 'vite';
+import { config } from 'dotenv';
 
 // https://bobbyhadz.com/blog/javascript-dirname-is-not-defined-in-es-module-scope
 const __filename = fileURLToPath(import.meta.url);
@@ -41,6 +42,11 @@ export async function startClient(server) {
   spinner.start();
 
   try {
+    // 加载环境变量
+    config({
+      path: resolve(__dirname, '../../.env')
+    });
+
     const address = server.httpServer.address();
     const env = Object.assign(process.env, {
       VITE_DEV_SERVER_HOST: address.address === '127.0.0.1' ? 'localhost' : address.address,
