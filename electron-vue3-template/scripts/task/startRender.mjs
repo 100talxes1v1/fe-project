@@ -46,7 +46,7 @@ export async function buildRenderProd() {
 
   try {
     chdir(resolve(__dirname, '../../packages/render'));
-    const clientProcess = spawn('npm', ['run', 'build']);
+    const clientProcess = spawn(/^win/.test(process.platform) ? 'npm.cmd' : 'npm', ['run', 'build']);
     const errorString = await getStream(clientProcess.stderr);
     spinner.stop();
     if (errorString) {

@@ -6,5 +6,6 @@
   "trailingComma": "none",
   "vueIndentScriptAndStyle": false,
   "bracketSpacing": true,
-  "htmlWhitespaceSensitivity": "strict"
+  "htmlWhitespaceSensitivity": "strict",
+  "endOfLine": "auto"
 }

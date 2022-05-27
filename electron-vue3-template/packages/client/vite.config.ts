@@ -4,6 +4,7 @@ import pkg from './package.json';
 import { resolve } from 'path';
 
 var dependencies = pkg.dependencies;
+var externalDependenciesInPackage = dependencies ? Object.keys(dependencies) : [];
 var externalDependencies = [ 'electron', ...builtinModules ];
 
 export default defineConfig({
@@ -25,7 +26,7 @@ export default defineConfig({
     },
     rollupOptions: {
       external: function (moduleName) {
-        return externalDependencies.some(item => moduleName === item);
+        return (externalDependencies.some(item => moduleName === item) || externalDependenciesInPackage.some(item => moduleName.startsWith(item)));
       },
     },
   },

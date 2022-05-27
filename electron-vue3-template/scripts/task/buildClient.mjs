@@ -52,7 +52,7 @@ export async function startClient(server) {
       VITE_DEV_SERVER_HOST: address.address === '127.0.0.1' ? 'localhost' : address.address,
       VITE_DEV_SERVER_PORT: address.port,
     });
-    const clientProcess = spawn('electron', [resolveRoot('packages/client/dist/main.js')], { stdio: 'inherit', env });
+    const clientProcess = spawn(/^win/.test(process.platform) ? 'electron.cmd' : 'electron', [resolveRoot('packages/client/dist/main.js')], { stdio: 'inherit', env });
     clientProcess.on('close', () => {
       server.close();
     });
@@ -71,7 +71,7 @@ export async function buildClientProd() {
 
   try {
     chdir(resolve(__dirname, '../../packages/client'));
-    const clientProcess = spawn('npm', ['run', 'build']);
+    const clientProcess = spawn(/^win/.test(process.platform) ? 'npm.cmd' : 'npm', ['run', 'build']);
     const errorString = await getStream(clientProcess.stderr);
     spinner.stop();
     if (errorString) {

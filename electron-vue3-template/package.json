@@ -8,7 +8,8 @@
     "dev": "node scripts/dev.mjs",
     "build:debug": "cross-env NODE_DEBUG=debug node scripts/dev.mjs",
     "build": "node scripts/build.mjs",
-    "bundle": "npm run build && electron-builder -mwl"
+    "bundle": "electron-builder -mwl",
+    "release": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "keywords": [],
   "author": "<%=author%>",

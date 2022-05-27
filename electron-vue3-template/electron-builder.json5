@@ -23,20 +23,24 @@
     ]
   },
   "win": {
+    "artifactName": "${productName}_${version}.${ext}",
     "target": [
-      {
-        "target": "nsis",
-        "arch": [
-          "x64"
-        ]
-      }
+      "dir"
     ],
-    "artifactName": "${productName}_${version}.${ext}"
+    "signAndEditExecutable": false
+  },
+  "linux": {
+    "artifactName": "${productName}_${version}.${ext}",
+    "target": [
+      "dir"
+    ]
   },
   "nsis": {
     "oneClick": false,
     "perMachine": false,
     "allowToChangeInstallationDirectory": true,
     "deleteAppDataOnUninstall": false
-  }
+  },
+  "beforePack": "scripts/bundleHooks/beforePack.js",
+  "afterPack": "scripts/bundleHooks/afterPack.js"
 }

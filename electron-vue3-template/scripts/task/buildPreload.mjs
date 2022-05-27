@@ -40,7 +40,7 @@ export async function buildPreloadProd() {
 
   try {
     chdir(resolve(__dirname, '../../packages/preload'));
-    const clientProcess = spawn('npm', ['run', 'build']);
+    const clientProcess = spawn(/^win/.test(process.platform) ? 'npm.cmd' : 'npm', ['run', 'build']);
     const errorString = await getStream(clientProcess.stderr);
     spinner.stop();
     if (errorString.includes('Error:')) {
