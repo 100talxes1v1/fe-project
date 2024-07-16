@@ -49,7 +49,7 @@
     "stylelint-config-standard": "^22.0.0",
     "stylelint-scss": "^3.21.0",
     "tailwindcss": "^2.2.19",
-    "typescript": "^4.9.5",
+    "typescript": "^5.5.3",
     "vite": "^2.9.18",
     "vite-plugin-import": "^0.3.0",
     "vue-tsc": "^2.0.21"
