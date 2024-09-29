@@ -11,7 +11,7 @@ export default defineConfig({
       scss: {
         additionalData(source: string, filename: string): Promise<string> {
           const absoluteThemeFileName = path.resolve(__dirname, './src/assets/css/_theme.scss');
-          const relativeThemeFileName = path.relative(path.dirname(filename), absoluteThemeFileName);
+          const relativeThemeFileName = path.relative(path.dirname(filename), absoluteThemeFileName).split('\\').join('/');
           const result = `
             @import '${relativeThemeFileName}';
             ${source}
